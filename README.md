@@ -2,7 +2,7 @@
 
 # b64audio
 
-a dumb audio editor that keeps audio as base64
+audio editor but base64
 its just an html file
 
 ## what it does
