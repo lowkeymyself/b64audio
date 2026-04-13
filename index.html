@@ -15,129 +15,60 @@
     padding: 0;
   }
 
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  .app { display: flex; flex-direction: column; min-height: 100vh; }
 
   header {
     background: #18181b;
     border-bottom: 1px solid #27272a;
     padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    display: flex; align-items: center; gap: 16px;
   }
 
-  header h1 {
-    font-size: 1.1rem;
-    color: #f4f4f5;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  header .badge {
-    background: #f59e0b;
-    color: #000;
-    font-size: 0.6rem;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  header .tagline {
-    color: #71717a;
-    font-size: 0.78rem;
-    margin-left: auto;
-  }
+  header h1 { font-size: 1.1rem; color: #f4f4f5; font-weight: 600; white-space: nowrap; }
+  header .tagline { color: #71717a; font-size: 0.78rem; margin-left: auto; }
 
   .b64-ticker {
     font-family: 'Cascadia Code', 'Fira Code', monospace;
-    font-size: 0.68rem;
-    color: #3b82f6;
-    background: #1a1a2e;
-    padding: 3px 10px;
-    border-radius: 4px;
-    max-width: 260px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    opacity: 0;
-    transition: opacity 0.3s;
+    font-size: 0.68rem; color: #3b82f6; background: #1a1a2e;
+    padding: 3px 10px; border-radius: 4px; max-width: 260px;
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    opacity: 0; transition: opacity 0.3s;
   }
-
   .b64-ticker.active { opacity: 1; }
 
-  .main-content {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-  }
+  .main-content { display: flex; flex: 1; overflow: hidden; }
 
   .editor-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 24px;
-    gap: 16px;
-    overflow-y: auto;
+    flex: 1; display: flex; flex-direction: column;
+    padding: 20px 24px; gap: 16px; overflow-y: auto;
   }
 
-  /* log sidebar */
   .log-sidebar {
-    width: 300px;
-    min-width: 300px;
-    background: #18181b;
-    border-left: 1px solid #27272a;
-    display: flex;
-    flex-direction: column;
+    width: 300px; min-width: 300px; background: #18181b;
+    border-left: 1px solid #27272a; display: flex; flex-direction: column;
   }
-
   .log-sidebar.hidden { display: none; }
 
   .log-header {
-    padding: 12px 16px;
-    border-bottom: 1px solid #27272a;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #a1a1aa;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    padding: 12px 16px; border-bottom: 1px solid #27272a;
+    font-size: 0.8rem; font-weight: 600; color: #a1a1aa;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
   }
-
   .log-header .dot {
-    width: 6px; height: 6px;
-    background: #22c55e;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
+    width: 6px; height: 6px; background: #22c55e;
+    border-radius: 50%; animation: pulse 2s infinite;
   }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  .log-entries {
-    flex: 1;
-    overflow-y: auto;
-    padding: 8px 0;
-  }
+  .log-entries { flex: 1; overflow-y: auto; padding: 8px 0; }
 
   .log-entry {
-    padding: 8px 16px;
-    font-size: 0.75rem;
+    padding: 8px 16px; font-size: 0.75rem;
     font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
-    border-bottom: 1px solid #1e1e22;
-    line-height: 1.5;
+    border-bottom: 1px solid #1e1e22; line-height: 1.5;
     animation: logSlideIn 0.2s ease-out;
   }
-
   @keyframes logSlideIn {
     from { opacity: 0; transform: translateX(8px); }
     to { opacity: 1; transform: translateX(0); }
@@ -149,270 +80,231 @@
   .log-entry.warn { color: #fbbf24; }
   .log-entry.error { color: #f87171; }
   .log-entry.op { color: #60a5fa; }
-
   .log-entry .detail {
-    display: block;
-    color: #52525b;
-    margin-top: 2px;
-    padding-left: 54px;
+    display: block; color: #52525b; margin-top: 2px; padding-left: 54px;
   }
 
-  /* drop zone */
   #drop-zone {
-    border: 2px dashed #3f3f46;
-    border-radius: 12px;
-    padding: 60px 40px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.25s;
-    background: #18181b;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+    border: 2px dashed #3f3f46; border-radius: 12px;
+    padding: 60px 40px; text-align: center; cursor: pointer;
+    transition: all 0.25s; background: #18181b;
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
   }
-
   #drop-zone:hover { border-color: #60a5fa; background: #1a1a2e; }
   #drop-zone.drag-over { border-color: #60a5fa; background: #1a1a2e; box-shadow: 0 0 30px rgba(96,165,250,0.1); }
-
   #drop-zone .icon {
-    width: 56px; height: 56px;
-    border-radius: 12px;
-    background: #27272a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
+    width: 56px; height: 56px; border-radius: 12px; background: #27272a;
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
   }
-
   #drop-zone .title { color: #e4e4e7; font-size: 1rem; font-weight: 500; }
   #drop-zone .hint { color: #52525b; font-size: 0.8rem; }
-  #file-input { display: none; }
+  #file-input, #b64-file-input { display: none; }
 
-  #editor { display: none; flex-direction: column; gap: 16px; flex: 1; }
+  #editor { display: none; flex-direction: column; gap: 14px; flex: 1; }
   #editor.visible { display: flex; }
 
+  .tab-bar {
+    display: flex; align-items: stretch; gap: 2px;
+    background: #111113; border: 1px solid #27272a;
+    border-radius: 8px 8px 0 0; padding: 4px 4px 0 4px;
+    overflow-x: auto; scrollbar-width: thin; scrollbar-color: #3f3f46 transparent;
+  }
+
+  .tab {
+    display: flex; align-items: center; gap: 6px;
+    padding: 7px 12px; background: #1a1a1e;
+    border: 1px solid #27272a; border-bottom: none;
+    border-radius: 6px 6px 0 0; font-size: 0.75rem;
+    color: #71717a; cursor: pointer; white-space: nowrap;
+    transition: all 0.15s; max-width: 180px; min-width: 0;
+  }
+  .tab:hover { background: #222226; color: #a1a1aa; }
+  .tab.active {
+    background: #18181b; color: #f4f4f5;
+    border-color: #3f3f46; border-bottom: 1px solid #18181b;
+    margin-bottom: -1px; z-index: 1;
+  }
+  .tab .tab-name { overflow: hidden; text-overflow: ellipsis; }
+  .tab .tab-close {
+    width: 16px; height: 16px; display: flex;
+    align-items: center; justify-content: center;
+    border-radius: 3px; font-size: 0.65rem;
+    color: #52525b; flex-shrink: 0; transition: all 0.1s;
+  }
+  .tab .tab-close:hover { background: #ef444444; color: #f87171; }
+
+  .tab-add {
+    display: flex; align-items: center; justify-content: center;
+    width: 28px; min-width: 28px; background: transparent;
+    border: 1px dashed #3f3f46; border-bottom: none;
+    border-radius: 6px 6px 0 0; color: #52525b;
+    font-size: 1rem; cursor: pointer; transition: all 0.15s; padding: 0;
+  }
+  .tab-add:hover { color: #a1a1aa; border-color: #52525b; background: #1a1a1e; }
+
   .file-bar {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: #18181b;
-    border: 1px solid #27272a;
-    border-radius: 8px;
-    padding: 10px 16px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; gap: 16px;
+    background: #18181b; border: 1px solid #27272a;
+    border-radius: 0 0 8px 8px; padding: 10px 16px; flex-wrap: wrap;
+    border-top: none;
   }
-
   .file-bar .name { font-weight: 600; color: #f4f4f5; font-size: 0.88rem; }
-
-  .file-bar .meta {
-    display: flex;
-    gap: 16px;
-    margin-left: auto;
-  }
-
-  .file-bar .meta span {
-    font-size: 0.75rem;
-    color: #71717a;
-    font-family: 'Cascadia Code', 'Fira Code', monospace;
-  }
-
+  .file-bar .meta { display: flex; gap: 16px; margin-left: auto; }
+  .file-bar .meta span { font-size: 0.75rem; color: #71717a; font-family: 'Cascadia Code', 'Fira Code', monospace; }
   .file-bar .meta span b { color: #a1a1aa; font-weight: 500; }
 
-  /* waveform */
   .waveform-wrap {
-    background: #18181b;
-    border: 1px solid #27272a;
-    border-radius: 8px;
-    padding: 12px;
-    position: relative;
+    background: #15151a; border: 1px solid #27272a;
+    border-radius: 10px; padding: 12px; position: relative;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+  }
+  .waveform-inner { position: relative; cursor: default; user-select: none; overflow: hidden; }
+
+  #waveform { width: 100%; height: 150px; display: block; border-radius: 6px; background: #0a0a0c; }
+
+  .selection-overlay {
+    position: absolute; top: 0; height: 100%;
+    background: rgba(59, 130, 246, 0.15);
+    border-left: 1px solid rgba(59, 130, 246, 0.5);
+    border-right: 1px solid rgba(59, 130, 246, 0.5);
+    pointer-events: none; display: none; z-index: 1; border-radius: 2px;
   }
 
-  #waveform {
-    width: 100%;
-    height: 140px;
-    display: block;
-    border-radius: 4px;
-    background: #0f0f12;
+  .playhead {
+    position: absolute; top: 0; width: 2px; height: 100%;
+    background: #ef4444; pointer-events: none; display: none; z-index: 2;
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+  }
+
+  .cursor-line {
+    position: absolute; top: 0; width: 1px; height: 100%;
+    background: rgba(255,255,255,0.25); pointer-events: none;
+    display: none; z-index: 1;
   }
 
   .waveform-label {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    font-size: 0.65rem;
-    color: #3f3f46;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    position: absolute; bottom: 14px; right: 14px;
+    font-size: 0.6rem; color: #3f3f46;
+    text-transform: uppercase; letter-spacing: 0.5px;
   }
 
+  .sel-info {
+    position: absolute; top: 14px; left: 14px;
+    font-size: 0.6rem; color: #60a5fa;
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    pointer-events: none; z-index: 3;
+    background: rgba(0,0,0,0.6); padding: 2px 6px; border-radius: 3px;
+    display: none;
+  }
+
+  .clip-info {
+    position: absolute; bottom: 14px; left: 14px;
+    font-size: 0.6rem; color: #52525b;
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    pointer-events: none; z-index: 3;
+  }
+
+  /* toolbar */
   .toolbar {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
+    display: flex; gap: 4px; flex-wrap: wrap; align-items: stretch;
   }
+  .toolbar .sep { width: 1px; height: 28px; background: #27272a; margin: 0 4px; align-self: center; }
 
-  .toolbar .sep {
-    width: 1px;
-    height: 24px;
-    background: #27272a;
-    margin: 0 6px;
+  .toolbar-group {
+    display: flex; flex-direction: column; gap: 1px;
   }
+  .toolbar-group .group-label {
+    font-size: 0.5rem; color: #3f3f46; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-left: 2px; line-height: 1;
+  }
+  .toolbar-group .btn-row { display: flex; gap: 2px; }
 
   button {
-    background: #27272a;
-    color: #d4d4d8;
-    border: 1px solid #3f3f46;
-    border-radius: 6px;
-    padding: 7px 14px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.15s;
+    background: #27272a; color: #d4d4d8;
+    border: 1px solid #3f3f46; border-radius: 6px;
+    padding: 6px 12px; font-size: 0.78rem;
+    cursor: pointer; transition: all 0.15s;
     font-family: inherit;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    display: inline-flex; align-items: center; gap: 5px;
   }
-
   button:hover { background: #3f3f46; border-color: #52525b; color: #f4f4f5; }
   button:active { background: #52525b; }
   button:disabled { opacity: 0.35; cursor: not-allowed; pointer-events: none; }
-
   button.primary { background: #2563eb; border-color: #3b82f6; color: #fff; }
   button.primary:hover { background: #3b82f6; }
   button.success { background: #16a34a; border-color: #22c55e; color: #fff; }
   button.success:hover { background: #22c55e; }
   button.danger { background: #dc2626; border-color: #ef4444; color: #fff; }
   button.danger:hover { background: #ef4444; }
+  button.ghost { background: transparent; border-color: transparent; color: #71717a; padding: 6px 8px; }
+  button.ghost:hover { background: #27272a; color: #a1a1aa; }
 
-  /* download dropdown */
   .dl-menu {
-    display: none;
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 0;
-    background: #27272a;
-    border: 1px solid #3f3f46;
-    border-radius: 6px;
-    overflow: hidden;
-    z-index: 50;
-    min-width: 140px;
+    display: none; position: absolute; bottom: calc(100% + 6px); left: 0;
+    background: #27272a; border: 1px solid #3f3f46; border-radius: 6px;
+    overflow: hidden; z-index: 50; min-width: 160px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.4);
   }
-
   .dl-menu.open { display: flex; flex-direction: column; }
   .dl-menu button { border: none; border-radius: 0; text-align: left; padding: 8px 14px; font-size: 0.8rem; background: transparent; }
   .dl-menu button:hover { background: #3f3f46; }
 
-  /* op panels */
   .op-panel {
-    display: none;
-    background: #1e1e22;
-    border: 1px solid #27272a;
-    border-radius: 8px;
-    padding: 16px 20px;
-    gap: 14px;
-    flex-direction: column;
-    animation: panelIn 0.15s ease-out;
+    display: none; background: #1a1a1f; border: 1px solid #27272a;
+    border-radius: 10px; padding: 16px 20px; gap: 14px;
+    flex-direction: column; animation: panelIn 0.15s ease-out;
   }
-
-  @keyframes panelIn {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
+  @keyframes panelIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
   .op-panel.visible { display: flex; }
 
   .op-panel .panel-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #e4e4e7;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 0.85rem; font-weight: 600; color: #e4e4e7;
+    display: flex; align-items: center; gap: 8px;
   }
-
   .op-panel .panel-title .icon-sm {
-    width: 20px; height: 20px;
-    background: #3b82f6;
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
+    width: 22px; height: 22px; background: #3b82f6; border-radius: 5px;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 0.7rem;
   }
 
   .op-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-
-  .op-panel label {
-    font-size: 0.78rem;
-    color: #a1a1aa;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-  }
-
+  .op-panel label { font-size: 0.78rem; color: #a1a1aa; display: flex; align-items: center; gap: 10px; flex: 1; }
   .op-panel label .lbl-text { min-width: 55px; color: #71717a; }
 
   input[type="range"] { flex: 1; accent-color: #3b82f6; height: 4px; }
 
   input[type="number"] {
-    width: 80px;
-    background: #0f0f12;
-    border: 1px solid #3f3f46;
-    border-radius: 4px;
-    color: #e4e4e7;
-    padding: 5px 8px;
-    font-size: 0.82rem;
-    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    width: 80px; background: #0f0f12; border: 1px solid #3f3f46;
+    border-radius: 4px; color: #e4e4e7; padding: 5px 8px;
+    font-size: 0.82rem; font-family: 'Cascadia Code', 'Fira Code', monospace;
   }
-
   input[type="number"]:focus { outline: none; border-color: #3b82f6; }
+
+  select {
+    background: #0f0f12; border: 1px solid #3f3f46;
+    border-radius: 4px; color: #e4e4e7; padding: 5px 8px;
+    font-size: 0.82rem; font-family: inherit; cursor: pointer;
+  }
+  select:focus { outline: none; border-color: #3b82f6; }
 
   .val-badge {
     font-family: 'Cascadia Code', 'Fira Code', monospace;
-    color: #60a5fa;
-    font-size: 0.78rem;
-    min-width: 42px;
-    text-align: center;
-    background: #1a1a2e;
-    padding: 2px 6px;
-    border-radius: 4px;
+    color: #60a5fa; font-size: 0.78rem; min-width: 42px;
+    text-align: center; background: #1a1a2e; padding: 2px 6px; border-radius: 4px;
   }
 
-  .op-actions {
-    display: flex;
-    gap: 8px;
-    padding-top: 4px;
-    border-top: 1px solid #27272a;
-    margin-top: 2px;
-  }
+  .op-actions { display: flex; gap: 8px; padding-top: 4px; border-top: 1px solid #27272a; margin-top: 2px; }
 
-  /* toasts */
   #toast-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+    display: flex; flex-direction: column; gap: 8px;
   }
 
   .toast {
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    padding: 10px 16px; border-radius: 8px; font-size: 0.8rem; font-weight: 500;
     animation: toastIn 0.25s ease-out, toastOut 0.3s ease-in 2.5s forwards;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    max-width: 320px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4); max-width: 320px;
   }
-
   .toast.success { background: #166534; color: #bbf7d0; border: 1px solid #22c55e; }
   .toast.error   { background: #7f1d1d; color: #fecaca; border: 1px solid #ef4444; }
   .toast.info    { background: #1e3a5f; color: #bfdbfe; border: 1px solid #3b82f6; }
@@ -421,47 +313,190 @@
   @keyframes toastIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes toastOut { from { opacity: 1; } to { opacity: 0; transform: translateY(-8px); } }
 
-  /* processing overlay */
   .processing-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5); z-index: 999;
+    align-items: center; justify-content: center;
   }
-
   .processing-overlay.visible { display: flex; }
-
   .processing-box {
-    background: #27272a;
-    border: 1px solid #3f3f46;
-    border-radius: 12px;
-    padding: 28px 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    background: #27272a; border: 1px solid #3f3f46;
+    border-radius: 12px; padding: 28px 40px; text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
   }
-
   .spinner {
-    width: 28px; height: 28px;
-    border: 3px solid #3f3f46;
-    border-top-color: #3b82f6;
-    border-radius: 50%;
+    width: 28px; height: 28px; border: 3px solid #3f3f46;
+    border-top-color: #3b82f6; border-radius: 50%;
     animation: spin 0.7s linear infinite;
   }
-
   @keyframes spin { to { transform: rotate(360deg); } }
   .processing-box p { color: #a1a1aa; font-size: 0.85rem; }
 
   #audio-player { display: none; }
 
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6); z-index: 998;
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.visible { display: flex; }
+
+  .modal-box {
+    background: #1e1e22; border: 1px solid #3f3f46; border-radius: 12px;
+    padding: 24px; width: 90%; max-width: 560px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .modal-box h3 { font-size: 0.95rem; color: #f4f4f5; font-weight: 600; }
+  .modal-box p { font-size: 0.78rem; color: #71717a; }
+  .modal-box textarea {
+    width: 100%; height: 120px; resize: vertical;
+    background: #0f0f12; border: 1px solid #3f3f46; border-radius: 6px;
+    color: #d4d4d8; padding: 10px; font-size: 0.78rem;
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+  }
+  .modal-box textarea:focus { outline: none; border-color: #3b82f6; }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+  .size-warn {
+    font-size: 0.7rem; color: #fbbf24; background: #713f1244;
+    padding: 6px 10px; border-radius: 4px; border: 1px solid #f59e0b33;
+    display: none;
+  }
+  .size-warn.visible { display: block; }
+
+  .bulk-file-list {
+    display: flex; flex-direction: column; gap: 2px;
+    max-height: 140px; overflow-y: auto; padding: 4px 0;
+  }
+  .bulk-file-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 4px 8px; border-radius: 4px; font-size: 0.78rem; color: #a1a1aa;
+    cursor: pointer; transition: background 0.1s;
+  }
+  .bulk-file-item:hover { background: #27272a; }
+  .bulk-file-item input[type="checkbox"] { accent-color: #3b82f6; cursor: pointer; }
+
+  .bulk-select-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 4px 8px; font-size: 0.72rem; color: #71717a;
+    border-bottom: 1px solid #27272a; margin-bottom: 4px;
+  }
+  .bulk-select-row input[type="checkbox"] { accent-color: #3b82f6; cursor: pointer; }
+
+  #bulk-params { min-height: 32px; }
+
+  .diff-modal-box { max-width: 720px; }
+  .diff-selectors {
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  }
+  .diff-selectors label { font-size: 0.78rem; color: #a1a1aa; display: flex; align-items: center; gap: 8px; }
+  .diff-selectors .lbl-text { color: #71717a; min-width: 40px; }
+
+  #diff-results { display: none; }
+  #diff-results.visible { display: flex; flex-direction: column; gap: 10px; }
+
+  .diff-meta-grid {
+    display: grid; grid-template-columns: auto 1fr 1fr; gap: 4px 16px;
+    font-size: 0.75rem; font-family: 'Cascadia Code', 'Fira Code', monospace;
+  }
+  .diff-meta-grid .dm-label { color: #52525b; }
+  .diff-meta-grid .dm-a { color: #60a5fa; }
+  .diff-meta-grid .dm-b { color: #f59e0b; }
+
+  #diff-canvas { width: 100%; height: 200px; display: block; border-radius: 4px; background: #0f0f12; }
+
+  .diff-legend {
+    display: flex; gap: 16px; font-size: 0.65rem; color: #52525b;
+  }
+  .diff-legend span { display: flex; align-items: center; gap: 4px; }
+
+  .keybinds-bar {
+    display: flex; gap: 12px; font-size: 0.6rem; color: #3f3f46;
+    padding: 2px 0; flex-wrap: wrap; align-items: center;
+  }
+  .keybinds-bar span { display: flex; align-items: center; gap: 3px; }
+  .keybinds-bar kbd {
+    background: #1a1a1e; border: 1px solid #27272a; border-radius: 3px;
+    padding: 1px 4px; font-family: 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.55rem; color: #52525b;
+  }
+
   @media (max-width: 860px) {
     .main-content { flex-direction: column; }
     .log-sidebar { width: 100%; min-width: 0; max-height: 220px; border-left: none; border-top: 1px solid #27272a; }
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 10px 12px; gap: 8px; }
+    header h1 { font-size: 0.95rem; }
+    header .tagline { display: none; }
+    .editor-area { padding: 8px 10px; gap: 8px; }
+    .toolbar { gap: 2px; }
+    .toolbar-group .group-label { display: none; }
+    .toolbar .sep { margin: 0 2px; }
+    button { padding: 5px 7px; font-size: 0.7rem; gap: 3px; }
+    .file-bar { padding: 6px 10px; gap: 8px; }
+    .file-bar .meta { gap: 8px; }
+    .file-bar .meta span { font-size: 0.65rem; }
+    #waveform { height: 120px; }
+    .bottom-panel { padding: 6px 10px; gap: 8px; min-height: 40px; }
+    .bottom-panel .bp-label { min-width: 28px; font-size: 0.5rem; }
+    .bottom-panel .bp-value { font-size: 0.62rem; }
+    .keybinds-bar { display: none; }
+    .log-sidebar { display: none; }
+    .op-panel { padding: 10px 12px; }
+    .tab { padding: 5px 8px; font-size: 0.68rem; }
+    #drop-zone { padding: 30px 20px; }
+    #drop-zone .icon { width: 40px; height: 40px; font-size: 1.1rem; }
+  }
+
+  .zoom-scroll-wrap {
+    height: 12px; overflow-x: auto; overflow-y: hidden;
+    background: #111114; border-radius: 0 0 6px 6px;
+    margin-top: 2px; display: none;
+  }
+  .zoom-scroll-wrap::-webkit-scrollbar { height: 8px; }
+  .zoom-scroll-wrap::-webkit-scrollbar-track { background: #111114; border-radius: 4px; }
+  .zoom-scroll-wrap::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; min-width: 30px; }
+  .zoom-scroll-wrap::-webkit-scrollbar-thumb:hover { background: #52525b; }
+  .zoom-scroll-inner { height: 1px; }
+
+  .bottom-panel {
+    background: #15151a; border: 1px solid #27272a; border-radius: 10px;
+    padding: 10px 16px; display: flex; align-items: center; gap: 16px;
+    font-size: 0.72rem; color: #52525b; flex-wrap: wrap; min-height: 52px;
+  }
+  .bottom-panel .bp-section { display: flex; align-items: center; gap: 6px; }
+  .bottom-panel .bp-label {
+    color: #3f3f46; text-transform: uppercase; font-size: 0.58rem;
+    letter-spacing: 0.5px; min-width: 42px;
+  }
+  .bottom-panel .bp-value {
+    color: #a1a1aa; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.72rem;
+  }
+  .bottom-panel .bp-sep { width: 1px; height: 20px; background: #27272a; }
+
+  .minimap-wrap {
+    flex: 1; min-width: 120px; height: 32px;
+    background: #0a0a0c; border-radius: 4px; position: relative;
+    cursor: pointer; overflow: hidden; border: 1px solid #1e1e22;
+  }
+  .minimap-wrap canvas { width: 100%; height: 100%; display: block; }
+  .minimap-viewport {
+    position: absolute; top: 0; height: 100%;
+    background: rgba(59, 130, 246, 0.12);
+    border-left: 1px solid rgba(59, 130, 246, 0.4);
+    border-right: 1px solid rgba(59, 130, 246, 0.4);
+    pointer-events: none; display: none;
+  }
+
+  button.toggle-btn { position: relative; }
+  button.toggle-btn.active {
+    background: #1e3a5f; border-color: #3b82f6; color: #60a5fa;
+  }
+  button.toggle-btn.active::after {
+    content: ''; position: absolute; top: -2px; right: -2px;
+    width: 6px; height: 6px; background: #3b82f6; border-radius: 50%;
   }
 </style>
 </head>
@@ -470,7 +505,6 @@
 <div class="app">
   <header>
     <h1>b64audio</h1>
-    <span class="badge">prototype</span>
     <span class="tagline">decode b64 > manipulate bytes > encode b64</span>
     <span class="b64-ticker" id="b64-ticker"></span>
   </header>
@@ -480,12 +514,17 @@
 
       <div id="drop-zone" tabindex="0">
         <div class="icon">&#127925;</div>
-        <div class="title">Drop an audio file here or click to browse</div>
-        <div class="hint">MP3, WAV, OGG, FLAC then converted to WAV again so it's clean</div>
-        <input type="file" id="file-input" accept="audio/*">
+        <div class="title">Drop audio files here or click to browse</div>
+        <div class="hint">MP3, WAV, OGG, FLAC -- you can drop multiple files at once</div>
+        <input type="file" id="file-input" accept="audio/*" multiple>
+        <input type="file" id="b64-file-input" accept=".txt,.b64">
       </div>
 
       <div id="editor">
+
+        <div class="tab-bar" id="tab-bar">
+          <button class="tab-add" id="tab-add" title="Add another file">+</button>
+        </div>
 
         <div class="file-bar">
           <span class="name" id="file-name">&mdash;</span>
@@ -494,66 +533,122 @@
             <span><b id="meta-rate">-</b> Hz</span>
             <span><b id="meta-duration">-</b>s</span>
             <span>b64: <b id="b64-length">0</b></span>
+            <span id="clip-count-meta" style="color:#818cf8;">1 clip</span>
           </div>
         </div>
 
+        <div id="size-warning" class="size-warn">Large file detected. Operations may be slow in the browser. Consider trimming first.</div>
+
         <div class="waveform-wrap">
-          <canvas id="waveform"></canvas>
-          <span class="waveform-label">PCM waveform</span>
+          <div class="waveform-inner" id="waveform-inner">
+            <canvas id="waveform"></canvas>
+            <div class="selection-overlay" id="selection-overlay"></div>
+            <div class="playhead" id="playhead"></div>
+            <div class="cursor-line" id="cursor-line"></div>
+            <div class="sel-info" id="sel-info"></div>
+            <div class="clip-info" id="clip-info"></div>
+          </div>
+          <div class="zoom-scroll-wrap" id="zoom-scroll-wrap"><div class="zoom-scroll-inner" id="zoom-scroll-inner"></div></div>
+          <span class="waveform-label">alt+drag to select &middot; drag to scrub &middot; ctrl+scroll to zoom</span>
         </div>
 
         <div class="toolbar">
-          <button id="btn-play" class="primary">&#9654; Play</button>
-          <button id="btn-stop">Stop</button>
-          <div class="sep"></div>
-          <button id="btn-trim">Trim</button>
-          <button id="btn-volume">Volume</button>
-          <button id="btn-fadein">Fade in</button>
-          <button id="btn-fadeout">Fade out</button>
-          <div class="sep"></div>
-          <button id="btn-undo" class="danger" disabled>&#8630; Undo</button>
-          <div style="position:relative;display:inline-block;">
-            <button id="btn-download" class="success">&#11015; Download &#9662;</button>
-            <div id="download-menu" class="dl-menu">
-              <button id="dl-wav">WAV file</button>
-              <button id="dl-b64">Base64 text</button>
+          <div class="toolbar-group">
+            <span class="group-label">playback</span>
+            <div class="btn-row">
+              <button id="btn-play" class="primary" title="Space">&#9654; Play</button>
+              <button id="btn-stop" title="Stop playback">Stop</button>
             </div>
           </div>
-          <button id="btn-new" style="margin-left:auto;">New File</button>
+          <div class="sep"></div>
+          <div class="toolbar-group">
+            <span class="group-label">edit</span>
+            <div class="btn-row">
+              <button id="btn-split" title="S / Split at cursor">&#9986; Split</button>
+              <button id="btn-delete" title="Del / Delete selection">&#128465; Delete</button>
+              <button id="btn-copy" title="Ctrl+C">Copy</button>
+              <button id="btn-paste" title="Ctrl+V">Paste</button>
+            </div>
+          </div>
+          <div class="sep"></div>
+          <div class="toolbar-group">
+            <span class="group-label">effects</span>
+            <div class="btn-row">
+              <button id="btn-volume">Volume</button>
+              <button id="btn-fadein">Fade in</button>
+              <button id="btn-fadeout">Fade out</button>
+              <button id="btn-reverse">Reverse</button>
+              <button id="btn-normalize">Normalize</button>
+              <button id="btn-speed">Speed</button>
+              <button id="btn-silence">+ Silence</button>
+            </div>
+          </div>
+          <div class="sep"></div>
+          <div class="toolbar-group">
+            <span class="group-label">multi</span>
+            <div class="btn-row">
+              <button id="btn-bulk">Bulk</button>
+              <button id="btn-diff">Diff</button>
+            </div>
+          </div>
+          <div class="sep"></div>
+          <div class="toolbar-group">
+            <span class="group-label">history</span>
+            <div class="btn-row">
+              <button id="btn-undo" disabled>&#8630; Undo</button>
+              <button id="btn-redo" disabled>&#8631; Redo</button>
+            </div>
+          </div>
+          <div class="sep"></div>
+          <div class="toolbar-group">
+            <span class="group-label">view</span>
+            <div class="btn-row">
+              <button id="btn-ripple" class="toggle-btn active" title="Ripple edit (R)">&#8646; Ripple</button>
+              <button id="btn-snap" class="toggle-btn" title="Snap to edges (M)">&#9168; Snap</button>
+              <button id="btn-zoom-in" title="Zoom in (+)">+ Zoom</button>
+              <button id="btn-zoom-out" title="Zoom out (-)">- Zoom</button>
+              <button id="btn-zoom-fit" title="Fit to view">Fit</button>
+            </div>
+          </div>
+          <div class="sep"></div>
+          <div class="toolbar-group">
+            <span class="group-label">file</span>
+            <div class="btn-row">
+              <div style="position:relative;display:inline-block;">
+                <button id="btn-download" class="success">&#11015; Download &#9662;</button>
+                <div id="download-menu" class="dl-menu">
+                  <button id="dl-wav">WAV file</button>
+                  <button id="dl-b64">Base64 text</button>
+                </div>
+              </div>
+              <button id="btn-import-b64">Import b64</button>
+              <button id="btn-close-tab" class="ghost">&#10005; Close</button>
+            </div>
+          </div>
         </div>
 
-        <!-- trim -->
-        <div class="op-panel" id="panel-trim">
-          <div class="panel-title"><span class="icon-sm">&#9986;</span> Trim</div>
-          <div class="op-row">
-            <label>
-              <span class="lbl-text">Start</span>
-              <input type="range" id="trim-start" min="0" max="100" value="0">
-              <span class="val-badge" id="trim-start-val">0%</span>
-            </label>
-          </div>
-          <div class="op-row">
-            <label>
-              <span class="lbl-text">End</span>
-              <input type="range" id="trim-end" min="0" max="100" value="100">
-              <span class="val-badge" id="trim-end-val">100%</span>
-            </label>
-          </div>
-          <div class="op-actions">
-            <button id="apply-trim" class="primary">Apply trim</button>
-            <button class="cancel-op">Cancel</button>
-          </div>
+        <div class="keybinds-bar">
+          <span><kbd>Space</kbd> play/pause</span>
+          <span><kbd>Ctrl+Z</kbd> undo</span>
+          <span><kbd>Ctrl+Y</kbd> redo</span>
+          <span><kbd>Ctrl+C</kbd> copy</span>
+          <span><kbd>Ctrl+V</kbd> paste</span>
+          <span><kbd>Ctrl+X</kbd> cut</span>
+          <span><kbd>S</kbd> split</span>
+          <span><kbd>Del</kbd> delete</span>
+          <span><kbd>R</kbd> ripple</span>
+          <span><kbd>M</kbd> snap</span>
+          <span><kbd>Alt+Drag</kbd> select</span>
+          <span><kbd>Ctrl+Scroll</kbd> zoom</span>
+          <span><kbd>Ctrl+Click</kbd> select clip</span>
+          <span><kbd>Esc</kbd> deselect</span>
         </div>
 
         <!-- volume -->
         <div class="op-panel" id="panel-volume">
           <div class="panel-title"><span class="icon-sm">&#128264;</span> Volume</div>
           <div class="op-row">
-            <label>
-              <span class="lbl-text">Multiplier</span>
-              <input type="number" id="volume-mult" min="0" max="10" step="0.1" value="1.0">
-              <span style="font-size:0.72rem; color:#52525b;">0.5 = half &middot; 2.0 = double</span>
-            </label>
+            <label><span class="lbl-text">Multiplier</span><input type="number" id="volume-mult" min="0" max="10" step="0.1" value="1.0"><span style="font-size:0.72rem;color:#52525b;">0.5 = half &middot; 2.0 = double</span></label>
           </div>
           <div class="op-actions">
             <button id="apply-volume" class="primary">Apply volume</button>
@@ -565,11 +660,7 @@
         <div class="op-panel" id="panel-fadein">
           <div class="panel-title"><span class="icon-sm">&#8599;</span> Fade in</div>
           <div class="op-row">
-            <label>
-              <span class="lbl-text">Duration</span>
-              <input type="range" id="fadein-pct" min="1" max="100" value="10">
-              <span class="val-badge" id="fadein-pct-val">10%</span>
-            </label>
+            <label><span class="lbl-text">Duration</span><input type="range" id="fadein-pct" min="1" max="100" value="10"><span class="val-badge" id="fadein-pct-val">10%</span></label>
           </div>
           <div class="op-actions">
             <button id="apply-fadein" class="primary">Apply fade in</button>
@@ -581,15 +672,98 @@
         <div class="op-panel" id="panel-fadeout">
           <div class="panel-title"><span class="icon-sm">&#8600;</span> Fade Out</div>
           <div class="op-row">
-            <label>
-              <span class="lbl-text">Duration</span>
-              <input type="range" id="fadeout-pct" min="1" max="100" value="10">
-              <span class="val-badge" id="fadeout-pct-val">10%</span>
-            </label>
+            <label><span class="lbl-text">Duration</span><input type="range" id="fadeout-pct" min="1" max="100" value="10"><span class="val-badge" id="fadeout-pct-val">10%</span></label>
           </div>
           <div class="op-actions">
             <button id="apply-fadeout" class="primary">Apply fade out</button>
             <button class="cancel-op">Cancel</button>
+          </div>
+        </div>
+
+        <!-- speed -->
+        <div class="op-panel" id="panel-speed">
+          <div class="panel-title"><span class="icon-sm">&#9654;</span> Speed</div>
+          <div class="op-row">
+            <label><span class="lbl-text">Mode</span>
+              <select id="speed-mode">
+                <option value="resample">Speed (changes pitch)</option>
+                <option value="timestretch">Speed (keep pitch)</option>
+              </select>
+            </label>
+          </div>
+          <div class="op-row">
+            <label><span class="lbl-text">Factor</span><input type="number" id="speed-factor" min="0.25" max="4" step="0.05" value="1.0"><span style="font-size:0.72rem;color:#52525b;">0.5 = slower &middot; 2.0 = faster</span></label>
+          </div>
+          <div class="op-actions">
+            <button id="apply-speed" class="primary">Apply speed</button>
+            <button class="cancel-op">Cancel</button>
+          </div>
+        </div>
+
+        <!-- silence -->
+        <div class="op-panel" id="panel-silence">
+          <div class="panel-title"><span class="icon-sm">+</span> Insert Silence</div>
+          <div class="op-row">
+            <label><span class="lbl-text">Duration</span><input type="number" id="silence-dur" min="0.1" max="30" step="0.1" value="1.0"><span style="font-size:0.72rem;color:#52525b;">seconds</span></label>
+          </div>
+          <div class="op-row">
+            <label><span class="lbl-text">Position</span><input type="range" id="silence-pos" min="0" max="100" value="0"><span class="val-badge" id="silence-pos-val">0%</span></label>
+          </div>
+          <div class="op-actions">
+            <button id="apply-silence" class="primary">Insert</button>
+            <button class="cancel-op">Cancel</button>
+          </div>
+        </div>
+
+        <!-- bulk ops -->
+        <div class="op-panel" id="panel-bulk">
+          <div class="panel-title"><span class="icon-sm">&#9881;</span> Bulk Operation</div>
+          <div class="bulk-select-row">
+            <input type="checkbox" id="bulk-select-all"> <label for="bulk-select-all" style="flex:none;cursor:pointer;">Select all files</label>
+          </div>
+          <div class="bulk-file-list" id="bulk-file-list"></div>
+          <div class="op-row">
+            <label><span class="lbl-text">Op</span>
+              <select id="bulk-op">
+                <option value="volume">Volume</option>
+                <option value="normalize">Normalize</option>
+                <option value="reverse">Reverse</option>
+                <option value="fadein">Fade In</option>
+                <option value="fadeout">Fade Out</option>
+              </select>
+            </label>
+          </div>
+          <div class="op-row" id="bulk-params"></div>
+          <div class="op-actions">
+            <button id="apply-bulk" class="primary">Apply to selected</button>
+            <button class="cancel-op">Cancel</button>
+          </div>
+        </div>
+
+        <div class="bottom-panel" id="bottom-panel">
+          <div class="bp-section">
+            <span class="bp-label">Position</span>
+            <span class="bp-value" id="bp-position">0:00.000</span>
+          </div>
+          <div class="bp-sep"></div>
+          <div class="bp-section">
+            <span class="bp-label">Selection</span>
+            <span class="bp-value" id="bp-selection">none</span>
+          </div>
+          <div class="bp-sep"></div>
+          <div class="bp-section">
+            <span class="bp-label">Zoom</span>
+            <span class="bp-value" id="bp-zoom">1.0x</span>
+          </div>
+          <div class="bp-sep"></div>
+          <div class="minimap-wrap" id="minimap-wrap">
+            <canvas id="minimap"></canvas>
+            <div class="minimap-viewport" id="minimap-viewport"></div>
+          </div>
+          <div class="bp-sep"></div>
+          <div class="bp-section">
+            <span class="bp-label">b64</span>
+            <span class="bp-value" id="bp-b64-preview" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:0.6rem;color:#3b82f6;"></span>
           </div>
         </div>
 
@@ -610,20 +784,128 @@
   </div>
 </div>
 
+<!-- b64 import modal -->
+<div class="modal-overlay" id="import-modal">
+  <div class="modal-box">
+    <h3>Import from base64</h3>
+    <p>Paste a raw base64 string (wav encoded) or load a .b64.txt file</p>
+    <textarea id="import-b64-text" placeholder="paste base64 string here..."></textarea>
+    <div class="modal-actions">
+      <button id="import-from-file">Load .b64.txt file</button>
+      <button id="import-apply" class="primary">Import</button>
+      <button id="import-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- diff modal -->
+<div class="modal-overlay" id="diff-modal">
+  <div class="modal-box diff-modal-box">
+    <h3>File Diff</h3>
+    <p>Compare two loaded files side by side</p>
+    <div class="diff-selectors">
+      <label><span class="lbl-text">File A</span><select id="diff-a"></select></label>
+      <label><span class="lbl-text">File B</span><select id="diff-b"></select></label>
+      <button id="diff-run" class="primary">Compare</button>
+    </div>
+    <div id="diff-results">
+      <div class="diff-meta-grid" id="diff-meta"></div>
+      <canvas id="diff-canvas"></canvas>
+      <div class="diff-legend">
+        <span><span style="color:#3b82f6;">&#9632;</span> File A</span>
+        <span><span style="color:#f59e0b;">&#9632;</span> File B</span>
+        <span><span style="color:#ef4444;">&#9632;</span> Difference</span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button id="diff-close">Close</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast-container"></div>
 <audio id="audio-player"></audio>
 
 <script>
+// -- state --
+var files = [];
+var activeIdx = -1;
+
 var currentB64 = '';
 var undoStack = [];
+var redoStack = [];
 var mimeType = 'audio/wav';
 var fileName = '';
 var numChannels = 1;
 var sampleRate = 44100;
 var audioDuration = 0;
 
+// clip system: clips partition the entire PCM range into contiguous segments
+// clips[i] = {start: frameIdx, end: frameIdx}
+// clips[0].start = 0, clips[last].end = totalFrames, clips[i].end = clips[i+1].start
+var clips = [];
+var selectedClipIndices = new Set();
+var clipboard = null; // {pcmBytes: Uint8Array, numChannels: n, sampleRate: n}
+
+// selection state (frame indices)
+var selStart = -1;
+var selEnd = -1;
+var isDragging = false;
+var dragStartPct = -1;
+var mouseDownTime = 0;
+var mouseDownPx = 0;
+
+// trim drag state
+var trimDragging = false;
+var trimClipEdge = null; // {clipIdx, side: 'left'|'right'}
+var trimStartPx = 0;
+var trimStartFrame = 0;
+
+// cursor position (frame)
+var cursorFrame = 0;
+
+// zoom and scroll (virtual px)
+var zoomLevel = 1;
+var scrollLeftPx = 0;
+
+// snap to clip edges
+var snapEnabled = false;
+
+// ripple edit (delete vs silence)
+var rippleEnabled = true;
+
+// alt-drag selection mode
+var isDragSelecting = false;
+
+// redraw throttle
+var redrawPending = false;
+function requestRedraw() {
+  if (redrawPending) return;
+  redrawPending = true;
+  requestAnimationFrame(function() {
+    redrawPending = false;
+    drawWaveform(); updateSelectionOverlay(); updateCursorLine();
+    if (typeof updateBottomPanel === 'function') updateBottomPanel();
+  });
+}
+
+// byte cache for efficiency
+var cachedBytes = null;
+var cachedB64Key = '';
+function getCachedBytes() {
+  if (cachedB64Key !== currentB64 || !cachedBytes) {
+    cachedBytes = b64ToBytes(currentB64);
+    cachedB64Key = currentB64;
+  }
+  return cachedBytes;
+}
+
+var SIZE_WARN_THRESHOLD = 50 * 1024 * 1024;
+
+// -- DOM refs --
 var dropZone = document.getElementById('drop-zone');
 var fileInput = document.getElementById('file-input');
+var b64FileInput = document.getElementById('b64-file-input');
 var editor = document.getElementById('editor');
 var fileNameEl = document.getElementById('file-name');
 var b64LenEl = document.getElementById('b64-length');
@@ -636,12 +918,20 @@ var audioPlayer = document.getElementById('audio-player');
 var logEntries = document.getElementById('log-entries');
 var processing = document.getElementById('processing');
 var processingMsg = document.getElementById('processing-msg');
+var sizeWarning = document.getElementById('size-warning');
+var tabBar = document.getElementById('tab-bar');
+var playheadEl = document.getElementById('playhead');
+var cursorLineEl = document.getElementById('cursor-line');
+var selOverlay = document.getElementById('selection-overlay');
+var selInfo = document.getElementById('sel-info');
+var clipInfoEl = document.getElementById('clip-info');
+var clipCountMeta = document.getElementById('clip-count-meta');
 
 var WAV_HEADER = 44;
 
+// -- utility --
 function log(msg, type, detail) {
-  type = type || 'info';
-  detail = detail || '';
+  type = type || 'info'; detail = detail || '';
   var now = new Date();
   var ts = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
   var el = document.createElement('div');
@@ -662,14 +952,8 @@ function toast(msg, type) {
   setTimeout(function() { el.remove(); }, 3000);
 }
 
-function showProcessing(msg) {
-  processingMsg.textContent = msg || 'Processing...';
-  processing.classList.add('visible');
-}
-
-function hideProcessing() {
-  processing.classList.remove('visible');
-}
+function showProcessing(msg) { processingMsg.textContent = msg || 'Processing...'; processing.classList.add('visible'); }
+function hideProcessing() { processing.classList.remove('visible'); }
 
 function b64ToBytes(b64) {
   var bin = atob(b64);
@@ -701,14 +985,10 @@ function audioBufferToWav(audioBuffer) {
   var buf = new ArrayBuffer(44 + dataSize);
   var view = new DataView(buf);
 
-  function w(offset, str) {
-    for (var i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
-  }
-
+  function w(offset, str) { for (var i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i)); }
   w(0, 'RIFF');
   view.setUint32(4, 44 + dataSize - 8, true);
-  w(8, 'WAVE');
-  w(12, 'fmt ');
+  w(8, 'WAVE'); w(12, 'fmt ');
   view.setUint32(16, 16, true);
   view.setUint16(20, 1, true);
   view.setUint16(22, nc, true);
@@ -721,7 +1001,6 @@ function audioBufferToWav(audioBuffer) {
 
   var channels = [];
   for (var c = 0; c < nc; c++) channels.push(audioBuffer.getChannelData(c));
-
   var offset = 44;
   for (var i = 0; i < len; i++) {
     for (var c = 0; c < nc; c++) {
@@ -732,8 +1011,31 @@ function audioBufferToWav(audioBuffer) {
       offset += 2;
     }
   }
-
   return new Uint8Array(buf);
+}
+
+function buildWav(pcmBytes, nc, sr) {
+  var blockAlign = nc * 2;
+  var byteRate = sr * blockAlign;
+  var header = new ArrayBuffer(44);
+  var v = new DataView(header);
+  function w(off, s) { for (var i = 0; i < s.length; i++) v.setUint8(off + i, s.charCodeAt(i)); }
+  w(0, 'RIFF');
+  v.setUint32(4, 44 + pcmBytes.length - 8, true);
+  w(8, 'WAVE'); w(12, 'fmt ');
+  v.setUint32(16, 16, true);
+  v.setUint16(20, 1, true);
+  v.setUint16(22, nc, true);
+  v.setUint32(24, sr, true);
+  v.setUint32(28, byteRate, true);
+  v.setUint16(32, blockAlign, true);
+  v.setUint16(34, 16, true);
+  w(36, 'data');
+  v.setUint32(40, pcmBytes.length, true);
+  var result = new Uint8Array(44 + pcmBytes.length);
+  result.set(new Uint8Array(header), 0);
+  result.set(pcmBytes, 44);
+  return result;
 }
 
 function readWavMeta(bytes) {
@@ -745,157 +1047,6 @@ function readWavMeta(bytes) {
     bitsPerSample: view.getUint16(34, true),
     dataSize: view.getUint32(40, true)
   };
-}
-
-function pushUndo() {
-  undoStack.push(currentB64);
-  document.getElementById('btn-undo').disabled = false;
-}
-
-function undo() {
-  if (undoStack.length === 0) return;
-  currentB64 = undoStack.pop();
-  document.getElementById('btn-undo').disabled = undoStack.length === 0;
-  refreshMeta();
-  updateUI();
-  log('Undo', 'warn', undoStack.length + ' left');
-  toast('Undone', 'info');
-}
-
-function refreshMeta() {
-  var bytes = b64ToBytes(currentB64);
-  var meta = readWavMeta(bytes);
-  if (meta) {
-    numChannels = meta.channels;
-    sampleRate = meta.sampleRate;
-    var totalSamples = meta.dataSize / (meta.channels * (meta.bitsPerSample / 8));
-    audioDuration = totalSamples / meta.sampleRate;
-  }
-}
-
-function updateUI() {
-  b64LenEl.textContent = currentB64.length.toLocaleString();
-  metaCh.textContent = numChannels;
-  metaRate.textContent = sampleRate.toLocaleString();
-  metaDur.textContent = audioDuration.toFixed(2);
-  drawWaveform();
-}
-
-function drawWaveform() {
-  var dpr = window.devicePixelRatio || 1;
-  var rect = canvas.getBoundingClientRect();
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
-  ctx.scale(dpr, dpr);
-
-  var w = rect.width;
-  var h = rect.height;
-  var mid = h / 2;
-
-  ctx.fillStyle = '#0f0f12';
-  ctx.fillRect(0, 0, w, h);
-  if (!currentB64) return;
-
-  var bytes = b64ToBytes(currentB64);
-  if (bytes.length <= WAV_HEADER) return;
-
-  var view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-  var blockAlign = numChannels * 2;
-  var pcmStart = WAV_HEADER;
-  var pcmLen = bytes.length - pcmStart;
-  var totalFrames = Math.floor(pcmLen / blockAlign);
-  if (totalFrames <= 0) return;
-
-  // center line
-  ctx.strokeStyle = '#27272a';
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(0, mid);
-  ctx.lineTo(w, mid);
-  ctx.stroke();
-
-  var grad = ctx.createLinearGradient(0, 0, 0, h);
-  grad.addColorStop(0, '#3b82f6');
-  grad.addColorStop(0.5, '#60a5fa');
-  grad.addColorStop(1, '#3b82f6');
-  ctx.strokeStyle = grad;
-  ctx.lineWidth = 1;
-
-  var framesPerPixel = totalFrames / w;
-
-  for (var x = 0; x < w; x++) {
-    var frameStart = Math.floor(x * framesPerPixel);
-    var frameEnd = Math.min(Math.floor((x + 1) * framesPerPixel), totalFrames);
-
-    var minSample = 32767, maxSample = -32768;
-    for (var f = frameStart; f < frameEnd; f++) {
-      var byteOff = pcmStart + f * blockAlign;
-      var sum = 0;
-      for (var c = 0; c < numChannels; c++) {
-        var off = byteOff + c * 2;
-        if (off + 1 < bytes.length) sum += view.getInt16(off, true);
-      }
-      var avg = sum / numChannels;
-      if (avg < minSample) minSample = avg;
-      if (avg > maxSample) maxSample = avg;
-    }
-
-    if (frameStart >= frameEnd) continue;
-
-    var yTop = mid - (maxSample / 32768) * mid;
-    var yBot = mid - (minSample / 32768) * mid;
-    ctx.beginPath();
-    ctx.moveTo(x, yTop);
-    ctx.lineTo(x, yBot);
-    ctx.stroke();
-  }
-}
-
-async function loadFile(file) {
-  fileName = file.name;
-  var originalType = file.type || 'audio/mpeg';
-
-  log('Loading file...', 'info', fileName + ' (' + originalType + ', ' + (file.size / 1024).toFixed(1) + ' KB)');
-  showProcessing('Decoding audio...');
-
-  try {
-    var arrayBuf = await file.arrayBuffer();
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    var audioBuffer = await audioCtx.decodeAudioData(arrayBuf);
-    audioCtx.close();
-
-    numChannels = audioBuffer.numberOfChannels;
-    sampleRate = audioBuffer.sampleRate;
-    audioDuration = audioBuffer.duration;
-
-    log('Decoded', 'success', numChannels + 'ch ' + sampleRate + 'Hz ' + audioDuration.toFixed(2) + 's');
-
-    if (originalType !== 'audio/wav' && originalType !== 'audio/x-wav') {
-      log('Converting to WAV', 'warn');
-    }
-
-    showProcessing('Encoding to WAV...');
-    var wavBytes = audioBufferToWav(audioBuffer);
-
-    showProcessing('Encoding to base64...');
-    currentB64 = bytesToB64(wavBytes);
-    mimeType = 'audio/wav';
-    undoStack = [];
-    document.getElementById('btn-undo').disabled = true;
-
-    log('Ready', 'success', (wavBytes.length / 1024).toFixed(0) + 'KB wav, ' + currentB64.length.toLocaleString() + ' b64 chars');
-
-    fileNameEl.textContent = fileName;
-    dropZone.style.display = 'none';
-    editor.classList.add('visible');
-    updateUI();
-    hideProcessing();
-    toast('Loaded ' + fileName, 'success');
-  } catch (err) {
-    hideProcessing();
-    log('Error: ' + err.message, 'error');
-    toast('Couldnt decode file', 'error');
-  }
 }
 
 function readSample(bytes, offset) {
@@ -911,13 +1062,1481 @@ function writeSample(bytes, offset, value) {
   bytes[offset + 1] = (value >> 8) & 0xff;
 }
 
-function applyTrim() {
-  var startPct = parseInt(document.getElementById('trim-start').value) / 100;
-  var endPct = parseInt(document.getElementById('trim-end').value) / 100;
-  if (startPct >= endPct) { toast('Start must be less than end', 'error'); return; }
+function runInWorker(fn, args, callback) {
+  var fnStr = fn.toString();
+  var workerCode = 'self.onmessage = function(e) { var fn = ' + fnStr + '; var result = fn(e.data); self.postMessage(result, result.transfer || []); };';
+  var blob = new Blob([workerCode], { type: 'application/javascript' });
+  var url = URL.createObjectURL(blob);
+  var worker = new Worker(url);
+  worker.onmessage = function(e) { worker.terminate(); URL.revokeObjectURL(url); callback(e.data); };
+  worker.onerror = function(e) {
+    worker.terminate(); URL.revokeObjectURL(url);
+    hideProcessing(); log('Worker error: ' + e.message, 'error'); toast('Operation failed', 'error');
+  };
+  worker.postMessage(args, args.transfer || []);
+}
 
-  showProcessing('Trimming...');
-  log('Trim', 'op', 'Range: ' + (startPct * 100).toFixed(0) + '% - ' + (endPct * 100).toFixed(0) + '%');
+// -- multi-file --
+function saveActiveFile() {
+  if (activeIdx < 0 || activeIdx >= files.length) return;
+  var f = files[activeIdx];
+  f.b64 = currentB64; f.undoStack = undoStack; f.redoStack = redoStack;
+  f.numChannels = numChannels; f.sampleRate = sampleRate;
+  f.audioDuration = audioDuration; f.name = fileName; f.mimeType = mimeType;
+  f.clips = clips.slice();
+}
+
+function loadActiveFile() {
+  if (activeIdx < 0 || activeIdx >= files.length) return;
+  var f = files[activeIdx];
+  currentB64 = f.b64; undoStack = f.undoStack; redoStack = f.redoStack;
+  numChannels = f.numChannels; sampleRate = f.sampleRate;
+  audioDuration = f.audioDuration; fileName = f.name; mimeType = f.mimeType;
+  clips = f.clips ? f.clips.slice() : [{start: 0, end: getTotalFrames()}];
+  validateClips();
+}
+
+function switchToFile(idx) {
+  if (idx < 0 || idx >= files.length) return;
+  stop();
+  if (activeIdx >= 0) saveActiveFile();
+  activeIdx = idx;
+  loadActiveFile();
+  clearSelection();
+  selectedClipIndices.clear();
+  zoomLevel = 1; scrollLeftPx = 0;
+  updateUndoRedoButtons();
+  closeAllPanels();
+  updateUI();
+  if (typeof updateZoomScroll === 'function') updateZoomScroll();
+}
+
+function closeFile(idx) {
+  if (idx < 0 || idx >= files.length) return;
+  stop();
+  files.splice(idx, 1);
+
+  if (files.length === 0) {
+    activeIdx = -1;
+    currentB64 = ''; undoStack = []; redoStack = []; fileName = '';
+    clips = [];
+    editor.classList.remove('visible');
+    dropZone.style.display = '';
+    closeAllPanels(); clearSelection(); selectedClipIndices.clear();
+    sizeWarning.classList.remove('visible');
+    fileInput.value = '';
+    log('All files closed', 'warn');
+    return;
+  }
+
+  if (idx === activeIdx) {
+    activeIdx = Math.min(idx, files.length - 1);
+    loadActiveFile();
+    clearSelection(); selectedClipIndices.clear();
+    updateUndoRedoButtons();
+  } else if (idx < activeIdx) {
+    activeIdx--;
+  }
+  closeAllPanels(); updateUI();
+  log('Closed tab', 'warn', files.length + ' remaining');
+}
+
+function renderTabs() {
+  var addBtn = document.getElementById('tab-add');
+  tabBar.innerHTML = '';
+  for (var i = 0; i < files.length; i++) {
+    var tab = document.createElement('div');
+    tab.className = 'tab' + (i === activeIdx ? ' active' : '');
+    tab.dataset.idx = i;
+    var nameSpan = document.createElement('span');
+    nameSpan.className = 'tab-name';
+    nameSpan.textContent = files[i].name || 'untitled';
+    tab.appendChild(nameSpan);
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tab-close';
+    closeBtn.innerHTML = '&#10005;';
+    closeBtn.dataset.idx = i;
+    closeBtn.addEventListener('click', (function(idx) {
+      return function(e) { e.stopPropagation(); closeFile(idx); };
+    })(i));
+    tab.appendChild(closeBtn);
+    tab.addEventListener('click', (function(idx) {
+      return function() { switchToFile(idx); };
+    })(i));
+    tabBar.appendChild(tab);
+  }
+  tabBar.appendChild(addBtn);
+}
+
+// -- undo/redo --
+function updateUndoRedoButtons() {
+  document.getElementById('btn-undo').disabled = undoStack.length === 0;
+  document.getElementById('btn-redo').disabled = redoStack.length === 0;
+}
+
+function pushUndo() {
+  undoStack.push({b64: currentB64, clips: clips.map(function(c) { return {start: c.start, end: c.end}; })});
+  redoStack = [];
+  updateUndoRedoButtons();
+}
+
+function undo() {
+  if (undoStack.length === 0) return;
+  redoStack.push({b64: currentB64, clips: clips.map(function(c) { return {start: c.start, end: c.end}; })});
+  var state = undoStack.pop();
+  currentB64 = state.b64;
+  clips = state.clips || [{start: 0, end: getTotalFrames()}];
+  updateUndoRedoButtons();
+  clearSelection(); selectedClipIndices.clear();
+  refreshMeta(); validateClips(); updateUI();
+  log('Undo', 'warn', undoStack.length + ' left');
+  toast('Undone', 'info');
+}
+
+function redo() {
+  if (redoStack.length === 0) return;
+  undoStack.push({b64: currentB64, clips: clips.map(function(c) { return {start: c.start, end: c.end}; })});
+  var state = redoStack.pop();
+  currentB64 = state.b64;
+  clips = state.clips || [{start: 0, end: getTotalFrames()}];
+  updateUndoRedoButtons();
+  clearSelection(); selectedClipIndices.clear();
+  refreshMeta(); validateClips(); updateUI();
+  log('Redo', 'warn', redoStack.length + ' left');
+  toast('Redone', 'info');
+}
+
+function refreshMeta() {
+  var bytes = b64ToBytes(currentB64);
+  var meta = readWavMeta(bytes);
+  if (meta) {
+    numChannels = meta.channels;
+    sampleRate = meta.sampleRate;
+    var totalSamples = meta.dataSize / (meta.channels * (meta.bitsPerSample / 8));
+    audioDuration = totalSamples / meta.sampleRate;
+  }
+}
+
+function checkSizeWarning() {
+  var rawSize = currentB64.length * 0.75;
+  if (rawSize > SIZE_WARN_THRESHOLD) {
+    sizeWarning.classList.add('visible');
+    log('Large file', 'warn', (rawSize / 1024 / 1024).toFixed(1) + 'MB in memory');
+  } else {
+    sizeWarning.classList.remove('visible');
+  }
+}
+
+function updateUI() {
+  if (activeIdx >= 0) saveActiveFile();
+  renderTabs();
+  b64LenEl.textContent = currentB64.length.toLocaleString();
+  metaCh.textContent = numChannels;
+  metaRate.textContent = sampleRate.toLocaleString();
+  metaDur.textContent = audioDuration.toFixed(2);
+  fileNameEl.textContent = fileName;
+  clipCountMeta.textContent = clips.length + ' clip' + (clips.length !== 1 ? 's' : '');
+  checkSizeWarning();
+  drawWaveform();
+  updateSelectionOverlay();
+  updateCursorLine();
+  reloadIfPlaying();
+  if (typeof updateBottomPanel === 'function') updateBottomPanel();
+}
+
+// -- clip system --
+function getTotalFrames() {
+  return Math.round(audioDuration * sampleRate);
+}
+
+function initClips() {
+  var total = getTotalFrames();
+  clips = total > 0 ? [{start: 0, end: total}] : [];
+}
+
+function validateClips() {
+  var total = getTotalFrames();
+  if (total <= 0) { clips = []; return; }
+  if (clips.length === 0) { clips = [{start: 0, end: total}]; return; }
+
+  // remove invalid clips
+  clips = clips.filter(function(c) { return c.end > c.start && c.start >= 0; });
+  if (clips.length === 0) { clips = [{start: 0, end: total}]; return; }
+
+  // sort by start
+  clips.sort(function(a, b) { return a.start - b.start; });
+
+  // ensure first starts at 0 and last ends at total
+  clips[0].start = 0;
+  clips[clips.length - 1].end = total;
+
+  // ensure continuity
+  for (var i = 1; i < clips.length; i++) {
+    clips[i].start = clips[i - 1].end;
+    if (clips[i].start >= clips[i].end) { clips.splice(i, 1); i--; }
+  }
+
+  if (clips.length === 0) clips = [{start: 0, end: total}];
+}
+
+function splitAtFrame(frame) {
+  var total = getTotalFrames();
+  if (frame <= 0 || frame >= total) { toast('Cannot split at edge', 'warn'); return; }
+
+  for (var i = 0; i < clips.length; i++) {
+    var c = clips[i];
+    if (frame > c.start && frame < c.end) {
+      clips.splice(i, 1, {start: c.start, end: frame}, {start: frame, end: c.end});
+      selectedClipIndices.clear();
+      updateUI();
+      log('Split', 'op', 'at ' + (frame / sampleRate).toFixed(2) + 's, now ' + clips.length + ' clips');
+      toast('Split into ' + clips.length + ' clips', 'success');
+      return;
+    }
+  }
+  toast('Already a split point here', 'warn');
+}
+
+function updateClipsAfterDelete(startFrame, endFrame) {
+  var removed = endFrame - startFrame;
+  var newClips = [];
+  for (var i = 0; i < clips.length; i++) {
+    var c = {start: clips[i].start, end: clips[i].end};
+    if (c.end <= startFrame) {
+      newClips.push(c);
+    } else if (c.start >= endFrame) {
+      newClips.push({start: c.start - removed, end: c.end - removed});
+    } else {
+      if (c.start < startFrame) newClips.push({start: c.start, end: startFrame});
+      if (c.end > endFrame) newClips.push({start: Math.max(startFrame, c.start < startFrame ? startFrame : startFrame), end: c.end - removed});
+    }
+  }
+  clips = newClips;
+  validateClips();
+}
+
+function updateClipsAfterInsert(atFrame, insertedFrames) {
+  var newClips = [];
+  for (var i = 0; i < clips.length; i++) {
+    var c = clips[i];
+    if (c.end <= atFrame) {
+      newClips.push({start: c.start, end: c.end});
+    } else if (c.start >= atFrame) {
+      newClips.push({start: c.start + insertedFrames, end: c.end + insertedFrames});
+    } else {
+      // insertion within this clip - split and insert
+      newClips.push({start: c.start, end: atFrame});
+      newClips.push({start: atFrame, end: atFrame + insertedFrames});
+      newClips.push({start: atFrame + insertedFrames, end: c.end + insertedFrames});
+    }
+  }
+  clips = newClips;
+  validateClips();
+}
+
+// -- clip layout (pixel mapping) --
+var CLIP_GAP = 3;
+
+function getClipLayout() {
+  var rect = canvas.getBoundingClientRect();
+  var w = rect.width * zoomLevel;
+  var total = getTotalFrames();
+  if (total <= 0 || clips.length === 0) return [];
+
+  var gapPx = clips.length > 1 ? CLIP_GAP : 0;
+  var totalGaps = Math.max(0, clips.length - 1) * gapPx;
+  var availW = w - totalGaps;
+
+  var layout = [];
+  var x = 0;
+  for (var i = 0; i < clips.length; i++) {
+    var frames = clips[i].end - clips[i].start;
+    var cw = (frames / total) * availW;
+    layout.push({x: x, width: cw, clip: clips[i], index: i});
+    x += cw + gapPx;
+  }
+  return layout;
+}
+
+function pixelToFrame(px) {
+  px = px + scrollLeftPx;
+  var layout = getClipLayout();
+  if (layout.length === 0) return 0;
+
+  for (var i = 0; i < layout.length; i++) {
+    var l = layout[i];
+    if (px >= l.x && px < l.x + l.width) {
+      var pct = (px - l.x) / Math.max(1, l.width);
+      return l.clip.start + Math.floor(pct * (l.clip.end - l.clip.start));
+    }
+    if (i < layout.length - 1) {
+      var next = layout[i + 1];
+      if (px >= l.x + l.width && px < next.x) return l.clip.end;
+    }
+  }
+  return getTotalFrames();
+}
+
+function frameToPixel(frame) {
+  var layout = getClipLayout();
+  if (layout.length === 0) return -scrollLeftPx;
+
+  for (var i = 0; i < layout.length; i++) {
+    var l = layout[i];
+    if (frame >= l.clip.start && frame <= l.clip.end) {
+      var pct = (frame - l.clip.start) / Math.max(1, l.clip.end - l.clip.start);
+      return l.x + pct * l.width - scrollLeftPx;
+    }
+  }
+  var last = layout[layout.length - 1];
+  return last.x + last.width - scrollLeftPx;
+}
+
+function getClipAtPixel(px) {
+  px = px + scrollLeftPx;
+  var layout = getClipLayout();
+  for (var i = 0; i < layout.length; i++) {
+    var l = layout[i];
+    if (px >= l.x && px <= l.x + l.width) return i;
+  }
+  return -1;
+}
+
+function getNearClipEdge(px) {
+  px = px + scrollLeftPx;
+  var layout = getClipLayout();
+  var threshold = 6;
+  for (var i = 0; i < layout.length; i++) {
+    var l = layout[i];
+    if (Math.abs(px - l.x) < threshold && i > 0) {
+      return {clipIdx: i, side: 'left'};
+    }
+    if (Math.abs(px - (l.x + l.width)) < threshold && i < layout.length - 1) {
+      return {clipIdx: i, side: 'right'};
+    }
+    // outer edges for trimming
+    if (i === 0 && Math.abs(px - l.x) < threshold) {
+      return {clipIdx: 0, side: 'trim-left'};
+    }
+    if (i === layout.length - 1 && Math.abs(px - (l.x + l.width)) < threshold) {
+      return {clipIdx: i, side: 'trim-right'};
+    }
+  }
+  return null;
+}
+
+// -- selection --
+function getSelectionFrameRange() {
+  if (selStart < 0 || selEnd < 0) return null;
+  var s = Math.min(selStart, selEnd);
+  var e = Math.max(selStart, selEnd);
+  if (s === e) return null;
+  var total = getTotalFrames();
+  s = Math.max(0, Math.min(s, total));
+  e = Math.max(0, Math.min(e, total));
+  if (s >= e) return null;
+  return { start: s, end: e };
+}
+
+// returns effective range: frame selection > selected clips > null (whole file)
+function getEffectiveSelection() {
+  var sel = getSelectionFrameRange();
+  if (sel) return sel;
+  if (selectedClipIndices.size > 0) {
+    var minStart = Infinity, maxEnd = 0;
+    selectedClipIndices.forEach(function(ci) {
+      if (ci < clips.length) {
+        if (clips[ci].start < minStart) minStart = clips[ci].start;
+        if (clips[ci].end > maxEnd) maxEnd = clips[ci].end;
+      }
+    });
+    if (minStart < maxEnd) return {start: minStart, end: maxEnd};
+  }
+  return null;
+}
+
+function clearSelection() {
+  selStart = -1; selEnd = -1;
+  selOverlay.style.display = 'none';
+  selInfo.style.display = 'none';
+}
+
+function updateSelectionOverlay() {
+  var sel = getSelectionFrameRange();
+  if (!sel) { selOverlay.style.display = 'none'; selInfo.style.display = 'none'; return; }
+  var rect = canvas.getBoundingClientRect();
+  if (rect.width <= 0) return;
+
+  var leftPx = frameToPixel(sel.start);
+  var rightPx = frameToPixel(sel.end);
+  var leftPct = (leftPx / rect.width) * 100;
+  var widthPct = ((rightPx - leftPx) / rect.width) * 100;
+
+  selOverlay.style.display = 'block';
+  selOverlay.style.left = leftPct + '%';
+  selOverlay.style.width = widthPct + '%';
+
+  var selDur = (sel.end - sel.start) / sampleRate;
+  var startSec = sel.start / sampleRate;
+  selInfo.style.display = 'block';
+  selInfo.textContent = startSec.toFixed(2) + 's - ' + (startSec + selDur).toFixed(2) + 's (' + selDur.toFixed(2) + 's)';
+}
+
+function updateCursorLine() {
+  if (!currentB64 || getTotalFrames() <= 0) { cursorLineEl.style.display = 'none'; return; }
+  var rect = canvas.getBoundingClientRect();
+  var px = frameToPixel(cursorFrame);
+  var pct = (px / rect.width) * 100;
+  cursorLineEl.style.display = 'block';
+  cursorLineEl.style.left = pct + '%';
+}
+
+// -- waveform drawing --
+function roundedRectPath(ctx, x, y, w, h, r) {
+  r = Math.min(r, w / 2, h / 2);
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
+function drawWaveform() {
+  var dpr = window.devicePixelRatio || 1;
+  var rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  var w = rect.width, h = rect.height;
+
+  // dark bg for gaps
+  ctx.fillStyle = '#0a0a0c';
+  ctx.fillRect(0, 0, w, h);
+  if (!currentB64) return;
+
+  var bytes = getCachedBytes();
+  if (bytes.length <= WAV_HEADER) return;
+
+  var view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  var blockAlign = numChannels * 2;
+  var totalFrames = Math.floor((bytes.length - WAV_HEADER) / blockAlign);
+  if (totalFrames <= 0) return;
+
+  var rulerH = 18;
+  var waveH = h - rulerH;
+  var waveMid = rulerH + waveH / 2;
+
+  var layout = getClipLayout();
+  if (layout.length === 0) return;
+
+  // draw time ruler
+  ctx.fillStyle = '#111114';
+  ctx.fillRect(0, 0, w, rulerH);
+  ctx.strokeStyle = '#27272a'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(0, rulerH); ctx.lineTo(w, rulerH); ctx.stroke();
+
+  var visibleDur = audioDuration / zoomLevel;
+  var interval = 1;
+  if (visibleDur > 120) interval = 30;
+  else if (visibleDur > 60) interval = 10;
+  else if (visibleDur > 30) interval = 5;
+  else if (visibleDur > 10) interval = 2;
+  else if (visibleDur > 2) interval = 1;
+  else if (visibleDur > 0.5) interval = 0.5;
+  else if (visibleDur > 0.1) interval = 0.1;
+  else interval = 0.05;
+
+  ctx.font = '9px sans-serif';
+  ctx.textBaseline = 'top';
+  var t = 0;
+  while (t <= audioDuration + 0.001) {
+    var frame = Math.min(Math.floor(t * sampleRate), totalFrames);
+    var px = frameToPixel(frame);
+    if (px >= -50 && px <= w + 50) {
+      ctx.strokeStyle = '#2a2a2e'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, rulerH); ctx.stroke();
+      ctx.fillStyle = '#52525b';
+      var lbl;
+      if (audioDuration >= 60) {
+        var m = Math.floor(t / 60); var s = Math.floor(t % 60);
+        lbl = m + ':' + (s < 10 ? '0' : '') + s;
+      } else {
+        lbl = t.toFixed(interval < 0.1 ? 2 : (interval < 1 ? 1 : 0)) + 's';
+      }
+      if (px >= 0 && px + 30 < w) ctx.fillText(lbl, px + 3, 3);
+    }
+    t += interval;
+  }
+
+  // draw each clip
+  for (var ci = 0; ci < layout.length; ci++) {
+    var l = layout[ci];
+    var clip = l.clip;
+    var clipW = l.width;
+    var clipX = l.x - scrollLeftPx;
+    var clipFrames = clip.end - clip.start;
+    if (clipFrames <= 0 || clipW <= 0) continue;
+    if (clipX + clipW < -1 || clipX > w + 1) continue;
+
+    ctx.save();
+    roundedRectPath(ctx, clipX, rulerH, clipW, waveH, 5);
+    ctx.clip();
+
+    // clip bg
+    var isSelected = selectedClipIndices.has(ci);
+    ctx.fillStyle = isSelected ? '#141428' : '#0f0f12';
+    ctx.fillRect(clipX, rulerH, clipW, waveH);
+
+    // center line
+    ctx.strokeStyle = '#27272a'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(clipX, waveMid); ctx.lineTo(clipX + clipW, waveMid); ctx.stroke();
+
+    // waveform
+    var grad = ctx.createLinearGradient(0, rulerH, 0, h);
+    grad.addColorStop(0, isSelected ? '#818cf8' : '#3b82f6');
+    grad.addColorStop(0.5, isSelected ? '#a5b4fc' : '#60a5fa');
+    grad.addColorStop(1, isSelected ? '#818cf8' : '#3b82f6');
+    ctx.strokeStyle = grad; ctx.lineWidth = 1;
+
+    var drawStart = Math.max(0, Math.floor(-clipX));
+    var drawEnd = Math.min(Math.ceil(clipW), Math.ceil(w - clipX));
+    var fpp = clipFrames / clipW;
+    for (var x = drawStart; x < drawEnd; x++) {
+      var fS = clip.start + Math.floor(x * fpp);
+      var fE = clip.start + Math.min(Math.floor((x + 1) * fpp), clipFrames);
+      var minS = 32767, maxS = -32768;
+      var fStep = Math.max(1, Math.floor((fE - fS) / 8));
+      for (var f = fS; f < fE; f += fStep) {
+        var bOff = WAV_HEADER + f * blockAlign;
+        var sum = 0;
+        for (var c = 0; c < numChannels; c++) {
+          var off = bOff + c * 2;
+          if (off + 1 < bytes.length) sum += view.getInt16(off, true);
+        }
+        var avg = sum / numChannels;
+        if (avg < minS) minS = avg;
+        if (avg > maxS) maxS = avg;
+      }
+      if (fS >= fE) continue;
+      ctx.beginPath();
+      ctx.moveTo(clipX + x, waveMid - (maxS / 32768) * (waveH / 2));
+      ctx.lineTo(clipX + x, waveMid - (minS / 32768) * (waveH / 2));
+      ctx.stroke();
+    }
+
+    // selected clip border
+    if (isSelected) {
+      ctx.strokeStyle = '#6366f1'; ctx.lineWidth = 2;
+      roundedRectPath(ctx, clipX + 1, rulerH + 1, clipW - 2, waveH - 2, 4);
+      ctx.stroke();
+    }
+
+    // clip number label
+    if (clips.length > 1) {
+      ctx.fillStyle = isSelected ? '#818cf8' : '#3f3f46';
+      ctx.font = '9px sans-serif'; ctx.textBaseline = 'bottom';
+      ctx.fillText((ci + 1), clipX + 4, h - 4);
+    }
+
+    ctx.restore();
+
+    // white outline for clip boundary
+    if (clips.length > 1) {
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+      ctx.lineWidth = 1;
+      roundedRectPath(ctx, clipX + 0.5, rulerH + 0.5, clipW - 1, waveH - 1, 5);
+      ctx.stroke();
+    }
+  }
+
+  // clip info
+  if (clips.length > 1) {
+    clipInfoEl.textContent = clips.length + ' clips';
+    clipInfoEl.style.display = 'none'; // shown via meta instead
+  } else {
+    clipInfoEl.style.display = 'none';
+  }
+}
+
+// -- waveform mouse interaction --
+function getCanvasPx(e) {
+  var rect = canvas.getBoundingClientRect();
+  return Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+}
+
+canvas.addEventListener('mousedown', function(e) {
+  if (!currentB64 || e.button !== 0) return;
+  e.preventDefault();
+  var px = getCanvasPx(e);
+
+  // Ctrl+Click = clip selection toggle
+  if ((e.ctrlKey || e.metaKey) && !e.altKey) {
+    var ci = getClipAtPixel(px);
+    if (ci >= 0) {
+      if (selectedClipIndices.has(ci)) selectedClipIndices.delete(ci);
+      else selectedClipIndices.add(ci);
+      drawWaveform();
+      return;
+    }
+  }
+
+  // trim/edge drag
+  var edge = getNearClipEdge(px);
+  if (edge && clips.length > 1) {
+    trimDragging = true;
+    trimClipEdge = edge;
+    trimStartPx = px;
+    trimStartFrame = edge.side === 'left' || edge.side === 'trim-left' ? clips[edge.clipIdx].start : clips[edge.clipIdx].end;
+    return;
+  }
+
+  var frame = pixelToFrame(px);
+  if (snapEnabled) frame = snapFrame(frame);
+  isDragging = true;
+  mouseDownPx = px;
+  mouseDownTime = Date.now();
+
+  if (e.altKey) {
+    // Alt+drag = range selection
+    isDragSelecting = true;
+    if (e.shiftKey && selStart >= 0) {
+      selEnd = frame;
+    } else {
+      selStart = frame;
+      selEnd = frame;
+      selectedClipIndices.clear();
+    }
+    updateSelectionOverlay();
+  } else {
+    // Normal click/drag = move cursor (no auto-play)
+    isDragSelecting = false;
+    cursorFrame = frame;
+    clearSelection();
+    selectedClipIndices.clear();
+    updateCursorLine();
+    drawWaveform();
+    if (typeof updateBottomPanel === 'function') updateBottomPanel();
+  }
+});
+
+document.addEventListener('mousemove', function(e) {
+  if (trimDragging && trimClipEdge) {
+    var px = getCanvasPx(e);
+    var frame = pixelToFrame(px);
+    var edge = trimClipEdge;
+
+    if (edge.side === 'left' || edge.side === 'right') {
+      var leftClip = edge.side === 'left' ? edge.clipIdx - 1 : edge.clipIdx;
+      var rightClip = leftClip + 1;
+      if (leftClip >= 0 && rightClip < clips.length) {
+        var minF = clips[leftClip].start + 1;
+        var maxF = clips[rightClip].end - 1;
+        frame = Math.max(minF, Math.min(maxF, frame));
+        clips[leftClip].end = frame;
+        clips[rightClip].start = frame;
+        drawWaveform();
+      }
+    } else if (edge.side === 'trim-left') {
+      var maxF = clips[0].end - 1;
+      frame = Math.max(0, Math.min(maxF, frame));
+      clips[0].start = frame;
+      drawWaveform();
+      clips[0].start = 0;
+    } else if (edge.side === 'trim-right') {
+      var minF = clips[clips.length - 1].start + 1;
+      var total = getTotalFrames();
+      frame = Math.max(minF, Math.min(total, frame));
+      clips[clips.length - 1].end = frame;
+      drawWaveform();
+      clips[clips.length - 1].end = total;
+    }
+    return;
+  }
+
+  if (!isDragging) {
+    if (currentB64) {
+      var px = getCanvasPx(e);
+      var edge = clips.length > 1 ? getNearClipEdge(px) : null;
+      if (edge) {
+        canvas.style.cursor = 'col-resize';
+      } else if (e.altKey) {
+        canvas.style.cursor = 'crosshair';
+      } else {
+        canvas.style.cursor = 'default';
+      }
+    }
+    return;
+  }
+
+  var px = getCanvasPx(e);
+  var frame = pixelToFrame(px);
+  if (snapEnabled) frame = snapFrame(frame);
+
+  if (isDragSelecting) {
+    selEnd = frame;
+    updateSelectionOverlay();
+    if (typeof updateBottomPanel === 'function') updateBottomPanel();
+  } else {
+    cursorFrame = frame;
+    updateCursorLine();
+    if (typeof updateBottomPanel === 'function') updateBottomPanel();
+  }
+});
+
+document.addEventListener('mouseup', function(e) {
+  if (trimDragging && trimClipEdge) {
+    var px = getCanvasPx(e);
+    var frame = pixelToFrame(px);
+    var edge = trimClipEdge;
+    trimDragging = false;
+
+    if (edge.side === 'trim-left') {
+      frame = Math.max(1, Math.min(clips[0].end - 1, frame));
+      if (frame > 0) {
+        pushUndo();
+        var bytes = b64ToBytes(currentB64);
+        var blockAlign = numChannels * 2;
+        if (rippleEnabled) {
+          var pcm = bytes.slice(WAV_HEADER);
+          var trimmed = pcm.slice(frame * blockAlign);
+          var wav = buildWav(trimmed, numChannels, sampleRate);
+          currentB64 = bytesToB64(wav);
+          updateClipsAfterDelete(0, frame);
+        } else {
+          for (var i = WAV_HEADER; i < WAV_HEADER + frame * blockAlign && i < bytes.length; i++) bytes[i] = 0;
+          currentB64 = bytesToB64(bytes);
+        }
+        refreshMeta(); validateClips(); clearSelection();
+        updateUI();
+        log('Trimmed start', 'success', (frame / sampleRate).toFixed(2) + 's ' + (rippleEnabled ? 'removed' : 'silenced'));
+        toast('Trimmed start', 'success');
+      }
+    } else if (edge.side === 'trim-right') {
+      var total = getTotalFrames();
+      var lastClip = clips[clips.length - 1];
+      frame = Math.max(lastClip.start + 1, Math.min(total, frame));
+      if (frame < total) {
+        pushUndo();
+        var bytes = b64ToBytes(currentB64);
+        var blockAlign = numChannels * 2;
+        if (rippleEnabled) {
+          var pcm = bytes.slice(WAV_HEADER);
+          var trimmed = pcm.slice(0, frame * blockAlign);
+          var wav = buildWav(trimmed, numChannels, sampleRate);
+          currentB64 = bytesToB64(wav);
+          updateClipsAfterDelete(frame, total);
+        } else {
+          for (var i = WAV_HEADER + frame * blockAlign; i < bytes.length; i++) bytes[i] = 0;
+          currentB64 = bytesToB64(bytes);
+        }
+        refreshMeta(); validateClips(); clearSelection();
+        updateUI();
+        log('Trimmed end', 'success', ((total - frame) / sampleRate).toFixed(2) + 's ' + (rippleEnabled ? 'removed' : 'silenced'));
+        toast('Trimmed end', 'success');
+      }
+    }
+    trimClipEdge = null;
+    return;
+  }
+
+  if (!isDragging) return;
+  isDragging = false;
+
+  var px = getCanvasPx(e);
+  var frame = pixelToFrame(px);
+  if (snapEnabled) frame = snapFrame(frame);
+
+  if (isDragSelecting) {
+    isDragSelecting = false;
+    if (selStart > selEnd) { var tmp = selStart; selStart = selEnd; selEnd = tmp; }
+    if (selStart === selEnd) { selStart = -1; selEnd = -1; }
+    updateSelectionOverlay();
+    if (typeof updateBottomPanel === 'function') updateBottomPanel();
+  } else {
+    cursorFrame = frame;
+    updateCursorLine();
+    if (typeof updateBottomPanel === 'function') updateBottomPanel();
+  }
+});
+
+// -- touch events (mobile) --
+function getTouchPx(e) {
+  var touch = e.touches[0] || e.changedTouches[0];
+  var rect = canvas.getBoundingClientRect();
+  return Math.max(0, Math.min(rect.width, touch.clientX - rect.left));
+}
+
+canvas.addEventListener('touchstart', function(e) {
+  if (!currentB64) return;
+  e.preventDefault();
+  var px = getTouchPx(e);
+  var edge = clips.length > 1 ? getNearClipEdge(px) : null;
+  if (edge) {
+    trimDragging = true; trimClipEdge = edge; trimStartPx = px;
+    trimStartFrame = edge.side === 'left' || edge.side === 'trim-left' ? clips[edge.clipIdx].start : clips[edge.clipIdx].end;
+    return;
+  }
+  var frame = pixelToFrame(px);
+  if (snapEnabled) frame = snapFrame(frame);
+  isDragging = true; isDragSelecting = false;
+  mouseDownPx = px; mouseDownTime = Date.now();
+  cursorFrame = frame;
+  clearSelection(); selectedClipIndices.clear();
+  updateCursorLine(); drawWaveform();
+  if (typeof updateBottomPanel === 'function') updateBottomPanel();
+}, { passive: false });
+
+canvas.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+  var px = getTouchPx(e);
+  if (trimDragging && trimClipEdge) {
+    var frame = pixelToFrame(px);
+    var edge = trimClipEdge;
+    if (edge.side === 'left' || edge.side === 'right') {
+      var leftClip = edge.side === 'left' ? edge.clipIdx - 1 : edge.clipIdx;
+      var rightClip = leftClip + 1;
+      if (leftClip >= 0 && rightClip < clips.length) {
+        frame = Math.max(clips[leftClip].start + 1, Math.min(clips[rightClip].end - 1, frame));
+        clips[leftClip].end = frame;
+        clips[rightClip].start = frame;
+        drawWaveform();
+      }
+    }
+    return;
+  }
+  if (isDragging) {
+    var frame = pixelToFrame(px);
+    if (snapEnabled) frame = snapFrame(frame);
+    cursorFrame = frame;
+    updateCursorLine();
+    if (typeof updateBottomPanel === 'function') updateBottomPanel();
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchend', function(e) {
+  if (trimDragging) { trimDragging = false; trimClipEdge = null; }
+  isDragging = false;
+}, { passive: false });
+
+// -- playback --
+var currentObjUrl = null;
+var tickerInterval = null;
+var playheadRAF = null;
+var b64Ticker = document.getElementById('b64-ticker');
+
+function updateTicker() {
+  if (!currentB64 || audioPlayer.paused) return;
+  var progress = audioPlayer.currentTime / (audioPlayer.duration || 1);
+  var idx = Math.floor(progress * (currentB64.length - 32));
+  if (idx >= 0) b64Ticker.textContent = currentB64.substring(idx, idx + 32);
+}
+
+function startTicker() { b64Ticker.classList.add('active'); tickerInterval = setInterval(updateTicker, 80); }
+function stopTicker() { clearInterval(tickerInterval); tickerInterval = null; b64Ticker.classList.remove('active'); }
+
+function updatePlayhead() {
+  if (audioPlayer.paused || !audioDuration) return;
+  var currentFrame = Math.floor(audioPlayer.currentTime * sampleRate);
+  var rect = canvas.getBoundingClientRect();
+  var px = frameToPixel(currentFrame);
+  var pct = (px / rect.width) * 100;
+  playheadEl.style.display = 'block';
+  playheadEl.style.left = Math.min(pct, 100) + '%';
+  cursorFrame = currentFrame;
+  playheadRAF = requestAnimationFrame(updatePlayhead);
+}
+
+function startPlayhead() {
+  stopPlayhead();
+  playheadEl.style.display = 'block';
+  playheadRAF = requestAnimationFrame(updatePlayhead);
+}
+
+function stopPlayhead() {
+  if (playheadRAF) { cancelAnimationFrame(playheadRAF); playheadRAF = null; }
+  playheadEl.style.display = 'none';
+}
+
+function play(startTime) {
+  stop();
+  if (!currentB64) return;
+  var bytes = b64ToBytes(currentB64);
+  var blob = new Blob([bytes], { type: mimeType });
+  currentObjUrl = URL.createObjectURL(blob);
+  audioPlayer.src = currentObjUrl;
+  audioPlayer.load();
+  var seekTarget = startTime || 0;
+  audioPlayer.addEventListener('canplay', function handler() {
+    audioPlayer.removeEventListener('canplay', handler);
+    if (seekTarget > 0) audioPlayer.currentTime = seekTarget;
+    audioPlayer.play();
+    startTicker();
+    startPlayhead();
+  });
+  log('Playing', 'info', seekTarget > 0 ? 'from ' + seekTarget.toFixed(2) + 's' : '');
+}
+
+function reloadIfPlaying() {
+  if (!currentObjUrl || audioPlayer.paused || !currentB64) return;
+  var curTime = audioPlayer.currentTime;
+  if (currentObjUrl) URL.revokeObjectURL(currentObjUrl);
+  var bytes = b64ToBytes(currentB64);
+  var blob = new Blob([bytes], { type: mimeType });
+  currentObjUrl = URL.createObjectURL(blob);
+  audioPlayer.src = currentObjUrl;
+  audioPlayer.load();
+  audioPlayer.addEventListener('canplay', function handler() {
+    audioPlayer.removeEventListener('canplay', handler);
+    audioPlayer.currentTime = Math.min(curTime, audioDuration);
+    audioPlayer.play();
+    startTicker(); startPlayhead();
+  });
+}
+
+function seekTo(pct) {
+  pct = Math.max(0, Math.min(1, pct));
+  var time = pct * audioDuration;
+  if (currentObjUrl && !audioPlayer.paused) {
+    audioPlayer.currentTime = time;
+  } else {
+    play(time);
+  }
+}
+
+function togglePlayPause() {
+  if (!currentB64) return;
+  if (currentObjUrl && !audioPlayer.paused) {
+    audioPlayer.pause();
+    stopTicker();
+    if (playheadRAF) { cancelAnimationFrame(playheadRAF); playheadRAF = null; }
+    cursorFrame = Math.floor(audioPlayer.currentTime * sampleRate);
+    updateCursorLine();
+    playheadEl.style.display = 'none';
+  } else {
+    play(cursorFrame / sampleRate);
+  }
+}
+
+audioPlayer.addEventListener('ended', function() { stopTicker(); stopPlayhead(); });
+
+function stop() {
+  audioPlayer.pause(); audioPlayer.currentTime = 0;
+  stopTicker(); stopPlayhead();
+  if (currentObjUrl) { URL.revokeObjectURL(currentObjUrl); currentObjUrl = null; }
+}
+
+// -- file management --
+function addFileEntry(name, b64, nc, sr, dur) {
+  var entry = {
+    id: Date.now() + Math.random(),
+    name: name, b64: b64,
+    undoStack: [], redoStack: [],
+    mimeType: 'audio/wav',
+    numChannels: nc, sampleRate: sr, audioDuration: dur,
+    clips: [{start: 0, end: Math.round(dur * sr)}]
+  };
+  files.push(entry);
+  dropZone.style.display = 'none';
+  editor.classList.add('visible');
+  switchToFile(files.length - 1);
+}
+
+async function loadFile(file) {
+  var originalType = file.type || 'audio/mpeg';
+  log('Loading...', 'info', file.name + ' (' + originalType + ', ' + (file.size / 1024).toFixed(1) + 'KB)');
+  showProcessing('Decoding ' + file.name + '...');
+  try {
+    var arrayBuf = await file.arrayBuffer();
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var audioBuffer = await audioCtx.decodeAudioData(arrayBuf);
+    audioCtx.close();
+    var nc = audioBuffer.numberOfChannels;
+    var sr = audioBuffer.sampleRate;
+    var dur = audioBuffer.duration;
+    log('Decoded', 'success', nc + 'ch ' + sr + 'Hz ' + dur.toFixed(2) + 's');
+    if (originalType !== 'audio/wav' && originalType !== 'audio/x-wav') log('Converting to WAV', 'warn');
+    showProcessing('Encoding to WAV...');
+    var wavBytes = audioBufferToWav(audioBuffer);
+    showProcessing('Encoding to base64...');
+    var b64 = bytesToB64(wavBytes);
+    log('Ready', 'success', (wavBytes.length / 1024).toFixed(0) + 'KB wav, ' + b64.length.toLocaleString() + ' b64 chars');
+    addFileEntry(file.name, b64, nc, sr, dur);
+    hideProcessing();
+    toast('Loaded ' + file.name, 'success');
+  } catch (err) {
+    hideProcessing();
+    log('Error: ' + err.message, 'error');
+    toast('Couldnt decode file', 'error');
+  }
+}
+
+function loadFromB64(b64str, name) {
+  b64str = b64str.trim();
+  if (b64str.indexOf('data:') === 0) {
+    var commaIdx = b64str.indexOf(',');
+    if (commaIdx > 0) b64str = b64str.substring(commaIdx + 1);
+  }
+  try { var bytes = b64ToBytes(b64str); } catch(e) {
+    toast('Invalid base64 string', 'error'); log('Bad b64 import', 'error', e.message); return;
+  }
+  var meta = readWavMeta(bytes);
+  if (!meta || bytes.length < 48) {
+    log('Not a WAV, trying to decode...', 'warn');
+    var blob = new Blob([bytes], { type: 'audio/mpeg' });
+    var fakeFile = new File([blob], name || 'imported.mp3');
+    loadFile(fakeFile); return;
+  }
+  var nc = meta.channels;
+  var sr = meta.sampleRate;
+  var totalSamples = meta.dataSize / (nc * (meta.bitsPerSample / 8));
+  var dur = totalSamples / sr;
+  addFileEntry(name || 'imported.wav', b64str, nc, sr, dur);
+  log('Imported from b64', 'success', nc + 'ch ' + sr + 'Hz ' + dur.toFixed(2) + 's');
+  toast('Imported ' + (name || 'imported.wav'), 'success');
+}
+
+// -- operations --
+
+function deleteSelection() {
+  // delete selected clips
+  if (selectedClipIndices.size > 0 && clips.length > 1) {
+    var indices = Array.from(selectedClipIndices).sort(function(a, b) { return b - a; });
+    pushUndo();
+    showProcessing('Deleting clips...');
+    setTimeout(function() {
+      var bytes = b64ToBytes(currentB64);
+      var blockAlign = numChannels * 2;
+      var pcm = bytes.slice(WAV_HEADER);
+
+      // collect ranges to remove (reverse sorted by start for safe removal)
+      var ranges = [];
+      for (var i = 0; i < indices.length; i++) {
+        var ci = indices[i];
+        if (ci < clips.length) ranges.push({start: clips[ci].start, end: clips[ci].end});
+      }
+      ranges.sort(function(a, b) { return b.start - a.start; });
+
+      for (var r = 0; r < ranges.length; r++) {
+        var cutS = ranges[r].start * blockAlign;
+        var cutE = ranges[r].end * blockAlign;
+        var newPcm = new Uint8Array(pcm.length - (cutE - cutS));
+        newPcm.set(pcm.slice(0, cutS), 0);
+        newPcm.set(pcm.slice(cutE), cutS);
+        pcm = newPcm;
+      }
+
+      var wav = buildWav(pcm, numChannels, sampleRate);
+      currentB64 = bytesToB64(wav);
+
+      // remove deleted clips and rebuild
+      var remaining = [];
+      for (var i = 0; i < clips.length; i++) {
+        if (!selectedClipIndices.has(i)) remaining.push(clips[i]);
+      }
+      clips = remaining;
+      refreshMeta(); validateClips();
+      selectedClipIndices.clear(); clearSelection();
+      updateUI(); hideProcessing();
+      log('Deleted clips', 'success', audioDuration.toFixed(2) + 's remaining');
+      toast('Clips deleted', 'success');
+    }, 20);
+    return;
+  }
+
+  // delete frame selection
+  var sel = getSelectionFrameRange();
+  if (!sel) { toast('Select a region or clips first', 'warn'); return; }
+
+  showProcessing('Deleting...');
+  log('Delete', 'op', (sel.end - sel.start) + ' frames');
+
+  setTimeout(function() {
+    pushUndo();
+    var bytes = b64ToBytes(currentB64);
+    var blockAlign = numChannels * 2;
+    if (rippleEnabled) {
+      var pcm = bytes.slice(WAV_HEADER);
+      var cutStart = sel.start * blockAlign;
+      var cutEnd = sel.end * blockAlign;
+      var before = pcm.slice(0, cutStart);
+      var after = pcm.slice(cutEnd);
+      var newPcm = new Uint8Array(before.length + after.length);
+      newPcm.set(before, 0);
+      newPcm.set(after, before.length);
+      var wav = buildWav(newPcm, numChannels, sampleRate);
+      currentB64 = bytesToB64(wav);
+      updateClipsAfterDelete(sel.start, sel.end);
+    } else {
+      var startB = WAV_HEADER + sel.start * blockAlign;
+      var endB = Math.min(WAV_HEADER + sel.end * blockAlign, bytes.length);
+      for (var i = startB; i < endB; i++) bytes[i] = 0;
+      currentB64 = bytesToB64(bytes);
+    }
+    refreshMeta(); clearSelection(); selectedClipIndices.clear();
+    closeAllPanels(); updateUI(); hideProcessing();
+    log(rippleEnabled ? 'Deleted' : 'Silenced', 'success', audioDuration.toFixed(2) + 's remaining');
+    toast(rippleEnabled ? 'Selection deleted' : 'Selection silenced', 'success');
+  }, 20);
+}
+
+function copySelection() {
+  // copy selected clips
+  if (selectedClipIndices.size > 0) {
+    var bytes = b64ToBytes(currentB64);
+    var blockAlign = numChannels * 2;
+    var pcm = bytes.slice(WAV_HEADER);
+    var totalCopyBytes = 0;
+    var sortedIndices = Array.from(selectedClipIndices).sort(function(a, b) { return a - b; });
+    for (var i = 0; i < sortedIndices.length; i++) {
+      var c = clips[sortedIndices[i]];
+      totalCopyBytes += (c.end - c.start) * blockAlign;
+    }
+    var copyBuf = new Uint8Array(totalCopyBytes);
+    var offset = 0;
+    for (var i = 0; i < sortedIndices.length; i++) {
+      var c = clips[sortedIndices[i]];
+      var start = c.start * blockAlign;
+      var end = c.end * blockAlign;
+      copyBuf.set(pcm.slice(start, end), offset);
+      offset += end - start;
+    }
+    clipboard = {pcmBytes: copyBuf, numChannels: numChannels, sampleRate: sampleRate};
+    log('Copied', 'success', sortedIndices.length + ' clip(s)');
+    toast('Copied ' + sortedIndices.length + ' clip(s)', 'info');
+    return;
+  }
+
+  // copy frame selection
+  var sel = getSelectionFrameRange();
+  if (!sel) { toast('Select a region or clips first', 'warn'); return; }
+
+  var bytes = b64ToBytes(currentB64);
+  var blockAlign = numChannels * 2;
+  var pcm = bytes.slice(WAV_HEADER);
+  var start = sel.start * blockAlign;
+  var end = sel.end * blockAlign;
+  clipboard = {pcmBytes: pcm.slice(start, end), numChannels: numChannels, sampleRate: sampleRate};
+  log('Copied', 'success', (sel.end - sel.start) + ' frames');
+  toast('Copied selection', 'info');
+}
+
+function pasteAtCursor() {
+  if (!clipboard || !clipboard.pcmBytes || clipboard.pcmBytes.length === 0) {
+    toast('Nothing to paste', 'warn'); return;
+  }
+  if (clipboard.numChannels !== numChannels || clipboard.sampleRate !== sampleRate) {
+    toast('Clipboard format mismatch (' + clipboard.numChannels + 'ch/' + clipboard.sampleRate + 'Hz vs ' + numChannels + 'ch/' + sampleRate + 'Hz)', 'error');
+    return;
+  }
+
+  showProcessing('Pasting...');
+  setTimeout(function() {
+    pushUndo();
+    var bytes = b64ToBytes(currentB64);
+    var blockAlign = numChannels * 2;
+    var pcm = bytes.slice(WAV_HEADER);
+    var insertByte = cursorFrame * blockAlign;
+    insertByte = Math.max(0, Math.min(insertByte, pcm.length));
+
+    var before = pcm.slice(0, insertByte);
+    var after = pcm.slice(insertByte);
+    var newPcm = new Uint8Array(before.length + clipboard.pcmBytes.length + after.length);
+    newPcm.set(before, 0);
+    newPcm.set(clipboard.pcmBytes, before.length);
+    newPcm.set(after, before.length + clipboard.pcmBytes.length);
+
+    var wav = buildWav(newPcm, numChannels, sampleRate);
+    currentB64 = bytesToB64(wav);
+    var insertedFrames = Math.floor(clipboard.pcmBytes.length / blockAlign);
+    updateClipsAfterInsert(cursorFrame, insertedFrames);
+    refreshMeta(); clearSelection(); selectedClipIndices.clear();
+    updateUI(); hideProcessing();
+    log('Pasted', 'success', insertedFrames + ' frames at ' + (cursorFrame / sampleRate).toFixed(2) + 's');
+    toast('Pasted', 'success');
+  }, 20);
+}
+
+function applyVolume() {
+  var mult = parseFloat(document.getElementById('volume-mult').value);
+  if (isNaN(mult) || mult < 0) { toast('Bad multiplier', 'error'); return; }
+  var sel = getEffectiveSelection();
+  showProcessing('Volume ' + mult + 'x...');
+  log('Volume' + (sel ? ' (selection)' : ''), 'op', mult + 'x');
+  setTimeout(function() {
+    pushUndo();
+    var bytes = b64ToBytes(currentB64);
+    var blockAlign = numChannels * 2;
+    var startByte = sel ? WAV_HEADER + sel.start * blockAlign : WAV_HEADER;
+    var endByte = sel ? Math.min(WAV_HEADER + sel.end * blockAlign, bytes.length) : bytes.length;
+    for (var i = startByte; i + 1 < endByte; i += 2) {
+      writeSample(bytes, i, readSample(bytes, i) * mult);
+    }
+    currentB64 = bytesToB64(bytes);
+    closeAllPanels(); updateUI(); hideProcessing();
+    log('Volume ' + mult + 'x', 'success');
+    toast('Volume changed', 'success');
+  }, 20);
+}
+
+function applyFadeIn() {
+  var sel = getEffectiveSelection();
+  var pct = parseInt(document.getElementById('fadein-pct').value) / 100;
+  showProcessing('Fade in...');
+  log('Fade in' + (sel ? ' (selection)' : ''), 'op', (pct * 100).toFixed(0) + '%');
+  setTimeout(function() {
+    pushUndo();
+    var bytes = b64ToBytes(currentB64);
+    var blockAlign = numChannels * 2;
+    var rangeStart, rangeFrames;
+    if (sel) { rangeStart = sel.start; rangeFrames = sel.end - sel.start; }
+    else { rangeStart = 0; rangeFrames = Math.floor((bytes.length - WAV_HEADER) / blockAlign); }
+    var fadeFrames = sel ? rangeFrames : Math.floor(rangeFrames * pct);
+    for (var f = 0; f < fadeFrames; f++) {
+      var factor = f / fadeFrames;
+      var bOff = WAV_HEADER + (rangeStart + f) * blockAlign;
+      for (var c = 0; c < numChannels; c++) {
+        var off = bOff + c * 2;
+        if (off + 1 < bytes.length) writeSample(bytes, off, readSample(bytes, off) * factor);
+      }
+    }
+    currentB64 = bytesToB64(bytes);
+    closeAllPanels(); updateUI(); hideProcessing();
+    log('Fade in done', 'success'); toast('Fade in done', 'success');
+  }, 20);
+}
+
+function applyFadeOut() {
+  var sel = getEffectiveSelection();
+  var pct = parseInt(document.getElementById('fadeout-pct').value) / 100;
+  showProcessing('Fade out...');
+  log('Fade out' + (sel ? ' (selection)' : ''), 'op', (pct * 100).toFixed(0) + '%');
+  setTimeout(function() {
+    pushUndo();
+    var bytes = b64ToBytes(currentB64);
+    var blockAlign = numChannels * 2;
+    var rangeStart, rangeEnd, rangeFrames;
+    if (sel) { rangeStart = sel.start; rangeEnd = sel.end; rangeFrames = rangeEnd - rangeStart; }
+    else { var totalFrames = Math.floor((bytes.length - WAV_HEADER) / blockAlign); rangeFrames = totalFrames; rangeEnd = totalFrames; rangeStart = 0; }
+    var fadeFrames = sel ? rangeFrames : Math.floor(rangeFrames * pct);
+    var fadeStart = rangeEnd - fadeFrames;
+    for (var f = fadeStart; f < rangeEnd; f++) {
+      var factor = (rangeEnd - f) / fadeFrames;
+      var bOff = WAV_HEADER + f * blockAlign;
+      for (var c = 0; c < numChannels; c++) {
+        var off = bOff + c * 2;
+        if (off + 1 < bytes.length) writeSample(bytes, off, readSample(bytes, off) * factor);
+      }
+    }
+    currentB64 = bytesToB64(bytes);
+    closeAllPanels(); updateUI(); hideProcessing();
+    log('Fade out done', 'success'); toast('Fade out done', 'success');
+  }, 20);
+}
+
+function applyReverse() {
+  var sel = getEffectiveSelection();
+  showProcessing('Reversing...');
+  log('Reverse' + (sel ? ' (selection)' : ''), 'op');
+  var bytes = b64ToBytes(currentB64);
+  var pcmBuf = bytes.buffer.slice(WAV_HEADER);
+  runInWorker(function(data) {
+    var pcm = new Uint8Array(data.pcm);
+    var blockAlign = data.nc * 2;
+    var totalFrames = Math.floor(pcm.length / blockAlign);
+    var temp = new Uint8Array(blockAlign);
+    var startF = data.selStart >= 0 ? data.selStart : 0;
+    var endF = data.selEnd >= 0 ? Math.min(data.selEnd, totalFrames) : totalFrames;
+    var left = startF, right = endF - 1;
+    while (left < right) {
+      var lOff = left * blockAlign; var rOff = right * blockAlign;
+      temp.set(pcm.subarray(lOff, lOff + blockAlign));
+      pcm.set(pcm.subarray(rOff, rOff + blockAlign), lOff);
+      pcm.set(temp, rOff);
+      left++; right--;
+    }
+    return { pcm: pcm.buffer, transfer: [pcm.buffer] };
+  }, { pcm: pcmBuf, nc: numChannels, selStart: sel ? sel.start : -1, selEnd: sel ? sel.end : -1, transfer: [pcmBuf] },
+  function(result) {
+    pushUndo();
+    var pcm = new Uint8Array(result.pcm);
+    var wav = buildWav(pcm, numChannels, sampleRate);
+    currentB64 = bytesToB64(wav);
+    refreshMeta(); updateUI(); hideProcessing();
+    log('Reversed', 'success'); toast('Reversed', 'success');
+  });
+}
+
+function applyNormalize() {
+  var sel = getEffectiveSelection();
+  showProcessing('Normalizing...');
+  log('Normalize' + (sel ? ' (selection)' : ''), 'op');
+  var bytes = b64ToBytes(currentB64);
+  var blockAlign = numChannels * 2;
+  var startByte = sel ? sel.start * blockAlign : 0;
+  var endByte = sel ? Math.min(sel.end * blockAlign, bytes.length - WAV_HEADER) : bytes.length - WAV_HEADER;
+  var pcmBuf = bytes.buffer.slice(WAV_HEADER);
+  runInWorker(function(data) {
+    var pcm = new Uint8Array(data.pcm);
+    var view = new DataView(pcm.buffer);
+    var sb = data.startByte; var eb = data.endByte;
+    var peak = 0;
+    for (var i = sb; i + 1 < eb; i += 2) {
+      var s = view.getInt16(i, true);
+      var abs = s < 0 ? -s : s;
+      if (abs > peak) peak = abs;
+    }
+    if (peak === 0 || peak === 32767) return { pcm: pcm.buffer, gain: peak === 0 ? 0 : 1, transfer: [pcm.buffer] };
+    var gain = 32767 / peak;
+    for (var i = sb; i + 1 < eb; i += 2) {
+      var s = view.getInt16(i, true);
+      s = Math.round(s * gain);
+      if (s > 32767) s = 32767; if (s < -32768) s = -32768;
+      view.setInt16(i, s, true);
+    }
+    return { pcm: pcm.buffer, gain: gain, transfer: [pcm.buffer] };
+  }, { pcm: pcmBuf, startByte: startByte, endByte: endByte, transfer: [pcmBuf] },
+  function(result) {
+    if (result.gain === 0) { hideProcessing(); toast('Audio is silent', 'warn'); return; }
+    pushUndo();
+    var pcm = new Uint8Array(result.pcm);
+    var wav = buildWav(pcm, numChannels, sampleRate);
+    currentB64 = bytesToB64(wav);
+    refreshMeta(); updateUI(); hideProcessing();
+    log('Normalized', 'success', 'gain ' + result.gain.toFixed(2) + 'x');
+    toast('Normalized', 'success');
+  });
+}
+
+function applySpeed() {
+  var factor = parseFloat(document.getElementById('speed-factor').value);
+  if (isNaN(factor) || factor <= 0 || factor > 4) { toast('Factor 0.25 - 4.0', 'error'); return; }
+  var mode = document.getElementById('speed-mode').value;
+
+  showProcessing((mode === 'timestretch' ? 'Time-stretching' : 'Resampling') + ' (' + factor + 'x)...');
+  log('Speed (' + mode + ')', 'op', factor + 'x');
+
+  var bytes = b64ToBytes(currentB64);
+  var pcmBuf = bytes.buffer.slice(WAV_HEADER);
+
+  if (mode === 'resample') {
+    runInWorker(function(data) {
+      var pcm = new Uint8Array(data.pcm);
+      var view = new DataView(pcm.buffer);
+      var nc = data.nc; var factor = data.factor;
+      var blockAlign = nc * 2;
+      var inputFrames = Math.floor(pcm.length / blockAlign);
+      var outputFrames = Math.max(1, Math.round(inputFrames / factor));
+      var out = new Uint8Array(outputFrames * blockAlign);
+      var outView = new DataView(out.buffer);
+      for (var i = 0; i < outputFrames; i++) {
+        var srcPos = i * factor;
+        var idx = Math.floor(srcPos); var frac = srcPos - idx;
+        var idx2 = idx + 1 < inputFrames ? idx + 1 : idx;
+        for (var c = 0; c < nc; c++) {
+          var s1 = view.getInt16((idx * nc + c) * 2, true);
+          var s2 = view.getInt16((idx2 * nc + c) * 2, true);
+          var s = Math.round(s1 * (1 - frac) + s2 * frac);
+          if (s > 32767) s = 32767; if (s < -32768) s = -32768;
+          outView.setInt16((i * nc + c) * 2, s, true);
+        }
+      }
+      return { pcm: out.buffer, transfer: [out.buffer] };
+    }, { pcm: pcmBuf, nc: numChannels, factor: factor, transfer: [pcmBuf] },
+    function(result) {
+      pushUndo();
+      var pcm = new Uint8Array(result.pcm);
+      var wav = buildWav(pcm, numChannels, sampleRate);
+      currentB64 = bytesToB64(wav);
+      // update clips proportionally
+      clips = clips.map(function(c) { return {start: Math.round(c.start / factor), end: Math.round(c.end / factor)}; });
+      refreshMeta(); validateClips(); clearSelection(); closeAllPanels(); updateUI(); hideProcessing();
+      log('Speed ' + factor + 'x (resample)', 'success', audioDuration.toFixed(2) + 's');
+      toast('Speed changed', 'success');
+    });
+  } else {
+    // OLA time-stretching (keeps pitch)
+    runInWorker(function(data) {
+      var pcm = new Uint8Array(data.pcm);
+      var inView = new DataView(pcm.buffer, pcm.byteOffset, pcm.byteLength);
+      var nc = data.nc; var factor = data.factor;
+      var blockAlign = nc * 2;
+      var inputFrames = Math.floor(pcm.length / blockAlign);
+      var outputFrames = Math.max(1, Math.round(inputFrames / factor));
+
+      var windowSize = 2048;
+      var analysisHop = Math.floor(windowSize / 4);
+      var synthHop = Math.max(1, Math.round(analysisHop / factor));
+
+      // hann window
+      var hann = new Float32Array(windowSize);
+      for (var i = 0; i < windowSize; i++) {
+        hann[i] = 0.5 * (1 - Math.cos(2 * Math.PI * i / windowSize));
+      }
+
+      var outFloat = new Float32Array(outputFrames * nc);
+      var normBuf = new Float32Array(outputFrames);
+
+      var numWindows = Math.max(1, Math.ceil((inputFrames - windowSize) / analysisHop) + 1);
+
+      for (var w = 0; w < numWindows; w++) {
+        var inPos = w * analysisHop;
+        var outPos = w * synthHop;
+
+        for (var i = 0; i < windowSize; i++) {
+          var inFrame = inPos + i;
+          var outFrame = outPos + i;
+          if (inFrame >= inputFrames || outFrame >= outputFrames) break;
+
+          var h = hann[i];
+          for (var c = 0; c < nc; c++) {
+            var off = (inFrame * nc + c) * 2;
+            if (off + 1 < pcm.length) {
+              outFloat[outFrame * nc + c] += inView.getInt16(off, true) * h;
+            }
+          }
+          normBuf[outFrame] += h;
+        }
+      }
+
+      var out = new Uint8Array(outputFrames * blockAlign);
+      var outView = new DataView(out.buffer);
+      for (var f = 0; f < outputFrames; f++) {
+        var norm = normBuf[f] > 0.001 ? normBuf[f] : 1;
+        for (var c = 0; c < nc; c++) {
+          var s = Math.round(outFloat[f * nc + c] / norm);
+          if (s > 32767) s = 32767; if (s < -32768) s = -32768;
+          outView.setInt16((f * nc + c) * 2, s, true);
+        }
+      }
+
+      return { pcm: out.buffer, transfer: [out.buffer] };
+    }, { pcm: pcmBuf, nc: numChannels, factor: factor, transfer: [pcmBuf] },
+    function(result) {
+      pushUndo();
+      var pcm = new Uint8Array(result.pcm);
+      var wav = buildWav(pcm, numChannels, sampleRate);
+      currentB64 = bytesToB64(wav);
+      clips = clips.map(function(c) { return {start: Math.round(c.start / factor), end: Math.round(c.end / factor)}; });
+      refreshMeta(); validateClips(); clearSelection(); closeAllPanels(); updateUI(); hideProcessing();
+      log('Speed ' + factor + 'x (keep pitch)', 'success', audioDuration.toFixed(2) + 's');
+      toast('Speed changed (pitch preserved)', 'success');
+    });
+  }
+}
+
+function applySilence() {
+  var dur = parseFloat(document.getElementById('silence-dur').value);
+  var posPct = parseInt(document.getElementById('silence-pos').value) / 100;
+  if (isNaN(dur) || dur <= 0) { toast('Bad duration', 'error'); return; }
+
+  showProcessing('Inserting silence...');
+  log('Silence', 'op', dur + 's at ' + (posPct * 100).toFixed(0) + '%');
 
   setTimeout(function() {
     pushUndo();
@@ -925,167 +2544,94 @@ function applyTrim() {
     var blockAlign = numChannels * 2;
     var pcm = bytes.slice(WAV_HEADER);
     var totalFrames = Math.floor(pcm.length / blockAlign);
-    var frameStart = Math.floor(totalFrames * startPct) * blockAlign;
-    var frameEnd = Math.floor(totalFrames * endPct) * blockAlign;
-    var trimmed = pcm.slice(frameStart, frameEnd);
+    var insertFrame = Math.floor(totalFrames * posPct);
+    var insertByte = insertFrame * blockAlign;
+    var silenceFrames = Math.round(dur * sampleRate);
+    var silenceBytes = silenceFrames * blockAlign;
+    var silence = new Uint8Array(silenceBytes);
 
-    var result = new Uint8Array(WAV_HEADER + trimmed.length);
-    result.set(bytes.slice(0, WAV_HEADER), 0);
-    result.set(trimmed, WAV_HEADER);
-    var view = new DataView(result.buffer);
-    view.setUint32(4, result.length - 8, true);
-    view.setUint32(40, trimmed.length, true);
+    var before = pcm.slice(0, insertByte);
+    var after = pcm.slice(insertByte);
+    var newPcm = new Uint8Array(before.length + silence.length + after.length);
+    newPcm.set(before, 0);
+    newPcm.set(silence, before.length);
+    newPcm.set(after, before.length + silence.length);
 
-    currentB64 = bytesToB64(result);
-    refreshMeta();
-    closeAllPanels();
-    updateUI();
-    hideProcessing();
-
-    var removedPct = (100 - (endPct - startPct) * 100).toFixed(1);
-    log('Trimmed', 'success', 'cut ' + removedPct + '%, now ' + audioDuration.toFixed(2) + 's');
-    toast('Trimmed', 'success');
+    var wav = buildWav(newPcm, numChannels, sampleRate);
+    currentB64 = bytesToB64(wav);
+    updateClipsAfterInsert(insertFrame, silenceFrames);
+    refreshMeta(); clearSelection(); closeAllPanels(); updateUI(); hideProcessing();
+    log('Silence added', 'success', dur + 's, now ' + audioDuration.toFixed(2) + 's');
+    toast('Silence inserted', 'success');
   }, 20);
 }
 
-function applyVolume() {
-  var mult = parseFloat(document.getElementById('volume-mult').value);
-  if (isNaN(mult) || mult < 0) { toast('Enter a valid multiplier', 'error'); return; }
-
-  showProcessing('Adjusting volume (' + mult + 'x)...');
-  log('Volume', 'op', 'Multiplier: ' + mult + 'x');
-
-  setTimeout(function() {
-    pushUndo();
-    var bytes = b64ToBytes(currentB64);
-
-    for (var i = WAV_HEADER; i + 1 < bytes.length; i += 2) {
-      writeSample(bytes, i, readSample(bytes, i) * mult);
-    }
-
-    currentB64 = bytesToB64(bytes);
-    closeAllPanels();
-    updateUI();
-    hideProcessing();
-    log('Volume ' + mult + 'x', 'success');
-    toast('Volume changed', 'success');
-  }, 20);
+// -- bulk operations --
+function bulkVolumeOn(b64, nc, mult) {
+  var bytes = b64ToBytes(b64);
+  for (var i = WAV_HEADER; i + 1 < bytes.length; i += 2) writeSample(bytes, i, readSample(bytes, i) * mult);
+  return bytesToB64(bytes);
 }
 
-function applyFadeIn() {
-  var pct = parseInt(document.getElementById('fadein-pct').value) / 100;
-
-  showProcessing('Applying fade in (' + (pct * 100).toFixed(0) + '%)...');
-  log('Fade In', 'op', 'Duration: ' + (pct * 100).toFixed(0) + '% of audio');
-
-  setTimeout(function() {
-    pushUndo();
-    var bytes = b64ToBytes(currentB64);
-    var blockAlign = numChannels * 2;
-    var pcmLen = bytes.length - WAV_HEADER;
-    var totalFrames = Math.floor(pcmLen / blockAlign);
-    var fadeFrames = Math.floor(totalFrames * pct);
-
-    for (var f = 0; f < fadeFrames; f++) {
-      var factor = f / fadeFrames;
-      var byteOff = WAV_HEADER + f * blockAlign;
-      for (var c = 0; c < numChannels; c++) {
-        var off = byteOff + c * 2;
-        if (off + 1 < bytes.length) {
-          writeSample(bytes, off, readSample(bytes, off) * factor);
-        }
-      }
-    }
-
-    currentB64 = bytesToB64(bytes);
-    closeAllPanels();
-    updateUI();
-    hideProcessing();
-
-    log('Fade in done', 'success', (pct * 100).toFixed(0) + '%');
-    toast('Fade in done', 'success');
-  }, 20);
+function bulkNormalizeOn(b64, nc) {
+  var bytes = b64ToBytes(b64); var peak = 0;
+  for (var i = WAV_HEADER; i + 1 < bytes.length; i += 2) { var s = readSample(bytes, i); var abs = s < 0 ? -s : s; if (abs > peak) peak = abs; }
+  if (peak === 0 || peak === 32767) return b64;
+  var gain = 32767 / peak;
+  for (var i = WAV_HEADER; i + 1 < bytes.length; i += 2) writeSample(bytes, i, readSample(bytes, i) * gain);
+  return bytesToB64(bytes);
 }
 
-function applyFadeOut() {
-  var pct = parseInt(document.getElementById('fadeout-pct').value) / 100;
-
-  showProcessing('Applying fade out (' + (pct * 100).toFixed(0) + '%)...');
-  log('Fade Out', 'op', 'Duration: ' + (pct * 100).toFixed(0) + '% of audio');
-
-  setTimeout(function() {
-    pushUndo();
-    var bytes = b64ToBytes(currentB64);
-    var blockAlign = numChannels * 2;
-    var pcmLen = bytes.length - WAV_HEADER;
-    var totalFrames = Math.floor(pcmLen / blockAlign);
-    var fadeFrames = Math.floor(totalFrames * pct);
-    var fadeStart = totalFrames - fadeFrames;
-
-    for (var f = fadeStart; f < totalFrames; f++) {
-      var factor = (totalFrames - f) / fadeFrames;
-      var byteOff = WAV_HEADER + f * blockAlign;
-      for (var c = 0; c < numChannels; c++) {
-        var off = byteOff + c * 2;
-        if (off + 1 < bytes.length) {
-          writeSample(bytes, off, readSample(bytes, off) * factor);
-        }
-      }
-    }
-
-    currentB64 = bytesToB64(bytes);
-    closeAllPanels();
-    updateUI();
-    hideProcessing();
-
-    log('Fade out done', 'success', (pct * 100).toFixed(0) + '%');
-    toast('Fade out done', 'success');
-  }, 20);
+function bulkReverseOn(b64, nc) {
+  var bytes = b64ToBytes(b64); var blockAlign = nc * 2;
+  var pcm = bytes.slice(WAV_HEADER);
+  var frameCount = Math.floor(pcm.length / blockAlign);
+  var temp = new Uint8Array(blockAlign);
+  var left = 0, right = frameCount - 1;
+  while (left < right) {
+    var lOff = left * blockAlign; var rOff = right * blockAlign;
+    temp.set(pcm.subarray(lOff, lOff + blockAlign));
+    pcm.set(pcm.subarray(rOff, rOff + blockAlign), lOff);
+    pcm.set(temp, rOff);
+    left++; right--;
+  }
+  var meta = readWavMeta(bytes);
+  var wav = buildWav(pcm, nc, meta ? meta.sampleRate : 44100);
+  return bytesToB64(wav);
 }
 
-var currentObjUrl = null;
-var tickerInterval = null;
-var b64Ticker = document.getElementById('b64-ticker');
-
-function updateTicker() {
-  if (!currentB64 || audioPlayer.paused) return;
-  var progress = audioPlayer.currentTime / (audioPlayer.duration || 1);
-  var idx = Math.floor(progress * (currentB64.length - 32));
-  b64Ticker.textContent = currentB64.substring(idx, idx + 32);
+function bulkFadeInOn(b64, nc, pct) {
+  var bytes = b64ToBytes(b64); var blockAlign = nc * 2;
+  var totalFrames = Math.floor((bytes.length - WAV_HEADER) / blockAlign);
+  var fadeFrames = Math.floor(totalFrames * pct);
+  for (var f = 0; f < fadeFrames; f++) {
+    var factor = f / fadeFrames; var bOff = WAV_HEADER + f * blockAlign;
+    for (var c = 0; c < nc; c++) { var off = bOff + c * 2; if (off + 1 < bytes.length) writeSample(bytes, off, readSample(bytes, off) * factor); }
+  }
+  return bytesToB64(bytes);
 }
 
-function startTicker() {
-  b64Ticker.classList.add('active');
-  tickerInterval = setInterval(updateTicker, 80);
+function bulkFadeOutOn(b64, nc, pct) {
+  var bytes = b64ToBytes(b64); var blockAlign = nc * 2;
+  var totalFrames = Math.floor((bytes.length - WAV_HEADER) / blockAlign);
+  var fadeFrames = Math.floor(totalFrames * pct);
+  var fadeStart = totalFrames - fadeFrames;
+  for (var f = fadeStart; f < totalFrames; f++) {
+    var factor = (totalFrames - f) / fadeFrames; var bOff = WAV_HEADER + f * blockAlign;
+    for (var c = 0; c < nc; c++) { var off = bOff + c * 2; if (off + 1 < bytes.length) writeSample(bytes, off, readSample(bytes, off) * factor); }
+  }
+  return bytesToB64(bytes);
 }
 
-function stopTicker() {
-  clearInterval(tickerInterval);
-  tickerInterval = null;
-  b64Ticker.classList.remove('active');
+function getMetaFromB64(b64) {
+  var bytes = b64ToBytes(b64);
+  var meta = readWavMeta(bytes);
+  if (!meta) return null;
+  var totalSamples = meta.dataSize / (meta.channels * (meta.bitsPerSample / 8));
+  return { channels: meta.channels, sampleRate: meta.sampleRate, duration: totalSamples / meta.sampleRate, bitsPerSample: meta.bitsPerSample };
 }
 
-function play() {
-  stop();
-  var bytes = b64ToBytes(currentB64);
-  var blob = new Blob([bytes], { type: mimeType });
-  currentObjUrl = URL.createObjectURL(blob);
-  audioPlayer.src = currentObjUrl;
-  audioPlayer.load();
-  audioPlayer.play();
-  startTicker();
-  log('Playing', 'info');
-}
-
-audioPlayer.addEventListener('ended', stopTicker);
-
-function stop() {
-  audioPlayer.pause();
-  audioPlayer.currentTime = 0;
-  stopTicker();
-  if (currentObjUrl) { URL.revokeObjectURL(currentObjUrl); currentObjUrl = null; }
-}
-
+// -- download --
 var dlMenu = document.getElementById('download-menu');
 
 function downloadWav() {
@@ -1093,38 +2639,26 @@ function downloadWav() {
   var blob = new Blob([bytes], { type: mimeType });
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
-  a.href = url;
-  var baseName = fileName.replace(/\.[^.]+$/, '');
-  a.download = baseName + '_edited.wav';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  a.href = url; a.download = fileName.replace(/\.[^.]+$/, '') + '_edited.wav';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
-  log('Saved ' + a.download, 'success');
-  toast('Downloading wav', 'info');
+  log('Saved ' + a.download, 'success'); toast('Downloading wav', 'info');
 }
 
 function downloadB64() {
   var blob = new Blob([currentB64], { type: 'text/plain' });
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
-  a.href = url;
-  var baseName = fileName.replace(/\.[^.]+$/, '');
-  a.download = baseName + '_edited.b64.txt';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  a.href = url; a.download = fileName.replace(/\.[^.]+$/, '') + '_edited.b64.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
-  log('Saved ' + a.download, 'success', currentB64.length.toLocaleString() + ' chars');
-  toast('Downloading b64', 'info');
+  log('Saved ' + a.download, 'success', currentB64.length.toLocaleString() + ' chars'); toast('Downloading b64', 'info');
 }
 
-var allPanels = [
-  document.getElementById('panel-trim'),
-  document.getElementById('panel-volume'),
-  document.getElementById('panel-fadein'),
-  document.getElementById('panel-fadeout')
-];
+// -- panels --
+var allPanels = ['panel-volume','panel-fadein','panel-fadeout','panel-speed','panel-silence','panel-bulk'].map(function(id) {
+  return document.getElementById(id);
+});
 
 function closeAllPanels() { allPanels.forEach(function(p) { p.classList.remove('visible'); }); }
 
@@ -1134,58 +2668,604 @@ function togglePanel(panel) {
   if (!was) panel.classList.add('visible');
 }
 
+// -- import modal --
+var importModal = document.getElementById('import-modal');
+var importText = document.getElementById('import-b64-text');
+
+document.getElementById('btn-import-b64').addEventListener('click', function() { importText.value = ''; importModal.classList.add('visible'); });
+document.getElementById('import-cancel').addEventListener('click', function() { importModal.classList.remove('visible'); });
+document.getElementById('import-apply').addEventListener('click', function() {
+  var val = importText.value.trim();
+  if (!val) { toast('Nothing to import', 'error'); return; }
+  importModal.classList.remove('visible');
+  loadFromB64(val, 'pasted.wav');
+});
+
+document.getElementById('import-from-file').addEventListener('click', function() { b64FileInput.click(); });
+b64FileInput.addEventListener('change', function(e) {
+  if (e.target.files.length === 0) return;
+  var file = e.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    importModal.classList.remove('visible');
+    loadFromB64(ev.target.result, file.name.replace(/\.(b64|txt)$/i, '') + '.wav');
+  };
+  reader.readAsText(file);
+  b64FileInput.value = '';
+});
+
+// -- drop zone --
 dropZone.addEventListener('click', function() { fileInput.click(); });
 dropZone.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') fileInput.click(); });
 dropZone.addEventListener('dragover', function(e) { e.preventDefault(); dropZone.classList.add('drag-over'); });
 dropZone.addEventListener('dragleave', function() { dropZone.classList.remove('drag-over'); });
 dropZone.addEventListener('drop', function(e) {
-  e.preventDefault();
-  dropZone.classList.remove('drag-over');
-  if (e.dataTransfer.files.length > 0) loadFile(e.dataTransfer.files[0]);
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  if (e.dataTransfer.files.length === 0) return;
+  handleDroppedFiles(e.dataTransfer.files);
 });
-fileInput.addEventListener('change', function(e) { if (e.target.files.length > 0) loadFile(e.target.files[0]); });
 
-document.getElementById('btn-play').addEventListener('click', play);
-document.getElementById('btn-stop').addEventListener('click', stop);
-document.getElementById('btn-download').addEventListener('click', function(e) {
-  e.stopPropagation();
-  dlMenu.classList.toggle('open');
+async function handleDroppedFiles(fileList) {
+  for (var i = 0; i < fileList.length; i++) {
+    var file = fileList[i];
+    if (file.name.match(/\.(b64|b64\.txt)$/i)) {
+      await new Promise(function(resolve) {
+        var reader = new FileReader();
+        reader.onload = function(ev) { loadFromB64(ev.target.result, file.name.replace(/\.(b64|txt)$/gi, '') + '.wav'); resolve(); };
+        reader.readAsText(file);
+      });
+    } else {
+      await loadFile(file);
+    }
+  }
+}
+
+fileInput.addEventListener('change', async function(e) {
+  if (e.target.files.length === 0) return;
+  for (var i = 0; i < e.target.files.length; i++) await loadFile(e.target.files[i]);
+  fileInput.value = '';
 });
+
+document.querySelector('.editor-area').addEventListener('dragover', function(e) { e.preventDefault(); });
+document.querySelector('.editor-area').addEventListener('drop', function(e) {
+  e.preventDefault();
+  if (e.dataTransfer.files.length === 0) return;
+  handleDroppedFiles(e.dataTransfer.files);
+});
+
+// -- button bindings --
+document.getElementById('btn-play').addEventListener('click', function() { togglePlayPause(); });
+document.getElementById('btn-stop').addEventListener('click', stop);
+document.getElementById('btn-download').addEventListener('click', function(e) { e.stopPropagation(); dlMenu.classList.toggle('open'); });
 document.getElementById('dl-wav').addEventListener('click', function() { dlMenu.classList.remove('open'); downloadWav(); });
 document.getElementById('dl-b64').addEventListener('click', function() { dlMenu.classList.remove('open'); downloadB64(); });
 document.addEventListener('click', function() { dlMenu.classList.remove('open'); });
 document.getElementById('btn-undo').addEventListener('click', undo);
+document.getElementById('btn-redo').addEventListener('click', redo);
 
-document.getElementById('btn-new').addEventListener('click', function() {
-  stop();
-  currentB64 = '';
-  undoStack = [];
-  fileName = '';
-  editor.classList.remove('visible');
-  dropZone.style.display = '';
-  closeAllPanels();
-  fileInput.value = '';
-  log('Reset', 'warn');
+document.getElementById('btn-split').addEventListener('click', function() {
+  if (!currentB64) return;
+  splitAtFrame(cursorFrame);
 });
 
-document.getElementById('btn-trim').addEventListener('click', function() { togglePanel(document.getElementById('panel-trim')); });
+document.getElementById('btn-delete').addEventListener('click', deleteSelection);
+document.getElementById('btn-copy').addEventListener('click', copySelection);
+document.getElementById('btn-paste').addEventListener('click', pasteAtCursor);
+
+document.getElementById('btn-close-tab').addEventListener('click', function() {
+  if (activeIdx >= 0) closeFile(activeIdx);
+});
+document.getElementById('tab-add').addEventListener('click', function() { fileInput.click(); });
+
 document.getElementById('btn-volume').addEventListener('click', function() { togglePanel(document.getElementById('panel-volume')); });
 document.getElementById('btn-fadein').addEventListener('click', function() { togglePanel(document.getElementById('panel-fadein')); });
 document.getElementById('btn-fadeout').addEventListener('click', function() { togglePanel(document.getElementById('panel-fadeout')); });
+document.getElementById('btn-reverse').addEventListener('click', applyReverse);
+document.getElementById('btn-normalize').addEventListener('click', applyNormalize);
+document.getElementById('btn-speed').addEventListener('click', function() { togglePanel(document.getElementById('panel-speed')); });
+document.getElementById('btn-silence').addEventListener('click', function() { togglePanel(document.getElementById('panel-silence')); });
 
 document.querySelectorAll('.cancel-op').forEach(function(btn) { btn.addEventListener('click', closeAllPanels); });
 
-document.getElementById('apply-trim').addEventListener('click', applyTrim);
 document.getElementById('apply-volume').addEventListener('click', applyVolume);
 document.getElementById('apply-fadein').addEventListener('click', applyFadeIn);
 document.getElementById('apply-fadeout').addEventListener('click', applyFadeOut);
+document.getElementById('apply-speed').addEventListener('click', applySpeed);
+document.getElementById('apply-silence').addEventListener('click', applySilence);
 
-document.getElementById('trim-start').addEventListener('input', function() { document.getElementById('trim-start-val').textContent = this.value + '%'; });
-document.getElementById('trim-end').addEventListener('input', function() { document.getElementById('trim-end-val').textContent = this.value + '%'; });
 document.getElementById('fadein-pct').addEventListener('input', function() { document.getElementById('fadein-pct-val').textContent = this.value + '%'; });
 document.getElementById('fadeout-pct').addEventListener('input', function() { document.getElementById('fadeout-pct-val').textContent = this.value + '%'; });
+document.getElementById('silence-pos').addEventListener('input', function() { document.getElementById('silence-pos-val').textContent = this.value + '%'; });
 
-window.addEventListener('resize', drawWaveform);
+// -- keyboard shortcuts --
+document.addEventListener('keydown', function(e) {
+  var tag = e.target.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+  if (!currentB64 && e.key !== 'Escape') return;
+
+  if (e.key === ' ') {
+    e.preventDefault(); togglePlayPause();
+  } else if (e.key === 'Escape') {
+    clearSelection(); selectedClipIndices.clear(); closeAllPanels();
+    importModal.classList.remove('visible');
+    document.getElementById('diff-modal').classList.remove('visible');
+    drawWaveform();
+  } else if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+    e.preventDefault(); undo();
+  } else if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey) || e.key === 'Z')) {
+    e.preventDefault(); redo();
+  } else if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+    e.preventDefault(); copySelection();
+  } else if ((e.ctrlKey || e.metaKey) && e.key === 'v') {
+    e.preventDefault(); pasteAtCursor();
+  } else if ((e.ctrlKey || e.metaKey) && e.key === 'x') {
+    e.preventDefault(); copySelection(); deleteSelection();
+  } else if (e.key === 'Delete' || e.key === 'Backspace') {
+    if (getSelectionFrameRange() || selectedClipIndices.size > 0) {
+      e.preventDefault(); deleteSelection();
+    }
+  } else if (e.key === 's' && !(e.ctrlKey || e.metaKey)) {
+    e.preventDefault(); splitAtFrame(cursorFrame);
+  } else if ((e.ctrlKey || e.metaKey) && e.key === 'a') {
+    e.preventDefault();
+    selStart = 0; selEnd = getTotalFrames();
+    updateSelectionOverlay();
+  } else if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+    e.preventDefault(); downloadWav();
+  } else if (e.key === 'r' && !(e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    rippleEnabled = !rippleEnabled;
+    document.getElementById('btn-ripple').classList.toggle('active', rippleEnabled);
+    toast(rippleEnabled ? 'Ripple on' : 'Ripple off', 'info');
+  } else if (e.key === 'm' && !(e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    snapEnabled = !snapEnabled;
+    document.getElementById('btn-snap').classList.toggle('active', snapEnabled);
+    toast(snapEnabled ? 'Snap enabled' : 'Snap disabled', 'info');
+  } else if (e.key === '=' || e.key === '+') {
+    e.preventDefault(); setZoom(zoomLevel * 1.5);
+  } else if (e.key === '-' && !(e.ctrlKey || e.metaKey)) {
+    e.preventDefault(); setZoom(zoomLevel / 1.5);
+  }
+});
+
+// -- bulk operations --
+document.getElementById('btn-bulk').addEventListener('click', function() {
+  if (files.length < 2) { toast('Load at least 2 files for bulk ops', 'warn'); return; }
+  populateBulkList(); updateBulkParams();
+  togglePanel(document.getElementById('panel-bulk'));
+});
+
+function populateBulkList() {
+  var list = document.getElementById('bulk-file-list');
+  list.innerHTML = '';
+  for (var i = 0; i < files.length; i++) {
+    var item = document.createElement('label');
+    item.className = 'bulk-file-item';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = true; cb.dataset.idx = i; cb.className = 'bulk-cb';
+    item.appendChild(cb);
+    item.appendChild(document.createTextNode(files[i].name + ' (' + files[i].audioDuration.toFixed(1) + 's)'));
+    list.appendChild(item);
+  }
+  document.getElementById('bulk-select-all').checked = true;
+}
+
+document.getElementById('bulk-select-all').addEventListener('change', function() {
+  var checked = this.checked;
+  document.querySelectorAll('.bulk-cb').forEach(function(cb) { cb.checked = checked; });
+});
+
+document.getElementById('bulk-op').addEventListener('change', updateBulkParams);
+
+function updateBulkParams() {
+  var op = document.getElementById('bulk-op').value;
+  var container = document.getElementById('bulk-params');
+  container.innerHTML = '';
+  if (op === 'volume') {
+    container.innerHTML = '<label><span class="lbl-text">Mult</span><input type="number" id="bulk-volume-mult" min="0" max="10" step="0.1" value="1.0"><span style="font-size:0.72rem;color:#52525b;">0.5 = half, 2.0 = double</span></label>';
+  } else if (op === 'fadein' || op === 'fadeout') {
+    container.innerHTML = '<label><span class="lbl-text">%</span><input type="number" id="bulk-fade-pct" min="1" max="100" step="1" value="10"><span style="font-size:0.72rem;color:#52525b;">% of audio</span></label>';
+  }
+}
+
+document.getElementById('apply-bulk').addEventListener('click', function() {
+  var op = document.getElementById('bulk-op').value;
+  var selectedIdxs = [];
+  document.querySelectorAll('.bulk-cb').forEach(function(cb) {
+    if (cb.checked) selectedIdxs.push(parseInt(cb.dataset.idx));
+  });
+  if (selectedIdxs.length === 0) { toast('Select some files', 'error'); return; }
+  saveActiveFile();
+  var count = 0; var total = selectedIdxs.length;
+  showProcessing('Bulk ' + op + ' on ' + total + ' files...');
+  log('Bulk ' + op, 'op', total + ' files selected');
+
+  function processNext() {
+    if (count >= selectedIdxs.length) {
+      loadActiveFile(); closeAllPanels(); updateUI(); hideProcessing();
+      log('Bulk done', 'success', total + ' files processed');
+      toast('Bulk ' + op + ' done on ' + total + ' files', 'success');
+      return;
+    }
+    var idx = selectedIdxs[count];
+    var f = files[idx];
+    f.undoStack.push({b64: f.b64, clips: f.clips ? f.clips.slice() : []});
+    f.redoStack = [];
+    if (op === 'volume') {
+      var mult = parseFloat(document.getElementById('bulk-volume-mult').value) || 1;
+      f.b64 = bulkVolumeOn(f.b64, f.numChannels, mult);
+    } else if (op === 'normalize') { f.b64 = bulkNormalizeOn(f.b64, f.numChannels); }
+    else if (op === 'reverse') { f.b64 = bulkReverseOn(f.b64, f.numChannels); }
+    else if (op === 'fadein') {
+      var pct = (parseFloat(document.getElementById('bulk-fade-pct').value) || 10) / 100;
+      f.b64 = bulkFadeInOn(f.b64, f.numChannels, pct);
+    } else if (op === 'fadeout') {
+      var pct = (parseFloat(document.getElementById('bulk-fade-pct').value) || 10) / 100;
+      f.b64 = bulkFadeOutOn(f.b64, f.numChannels, pct);
+    }
+    var m = getMetaFromB64(f.b64);
+    if (m) { f.numChannels = m.channels; f.sampleRate = m.sampleRate; f.audioDuration = m.duration; }
+    processingMsg.textContent = 'Bulk ' + op + '... (' + (count + 1) + '/' + total + ')';
+    count++;
+    setTimeout(processNext, 10);
+  }
+  setTimeout(processNext, 20);
+});
+
+// -- diff --
+var diffModal = document.getElementById('diff-modal');
+
+document.getElementById('btn-diff').addEventListener('click', function() {
+  if (files.length < 2) { toast('Need at least 2 files to compare', 'warn'); return; }
+  populateDiffSelectors();
+  document.getElementById('diff-results').classList.remove('visible');
+  diffModal.classList.add('visible');
+});
+
+document.getElementById('diff-close').addEventListener('click', function() { diffModal.classList.remove('visible'); });
+
+function populateDiffSelectors() {
+  var selA = document.getElementById('diff-a');
+  var selB = document.getElementById('diff-b');
+  selA.innerHTML = ''; selB.innerHTML = '';
+  saveActiveFile();
+  for (var i = 0; i < files.length; i++) {
+    var optA = document.createElement('option'); optA.value = i; optA.textContent = files[i].name; selA.appendChild(optA);
+    var optB = document.createElement('option'); optB.value = i; optB.textContent = files[i].name; selB.appendChild(optB);
+  }
+  if (files.length >= 2) selB.value = '1';
+}
+
+document.getElementById('diff-run').addEventListener('click', function() {
+  var idxA = parseInt(document.getElementById('diff-a').value);
+  var idxB = parseInt(document.getElementById('diff-b').value);
+  if (idxA === idxB) { toast('Pick two different files', 'warn'); return; }
+  var fA = files[idxA]; var fB = files[idxB];
+  var metaDiv = document.getElementById('diff-meta');
+  var sizeA = (fA.b64.length * 0.75 / 1024).toFixed(0);
+  var sizeB = (fB.b64.length * 0.75 / 1024).toFixed(0);
+  metaDiv.innerHTML =
+    '<span class="dm-label"></span><span class="dm-a" style="font-weight:600;">File A</span><span class="dm-b" style="font-weight:600;">File B</span>' +
+    '<span class="dm-label">Name</span><span class="dm-a">' + fA.name + '</span><span class="dm-b">' + fB.name + '</span>' +
+    '<span class="dm-label">Duration</span><span class="dm-a">' + fA.audioDuration.toFixed(2) + 's</span><span class="dm-b">' + fB.audioDuration.toFixed(2) + 's</span>' +
+    '<span class="dm-label">Channels</span><span class="dm-a">' + fA.numChannels + '</span><span class="dm-b">' + fB.numChannels + '</span>' +
+    '<span class="dm-label">Rate</span><span class="dm-a">' + fA.sampleRate + ' Hz</span><span class="dm-b">' + fB.sampleRate + ' Hz</span>' +
+    '<span class="dm-label">Size</span><span class="dm-a">' + sizeA + ' KB</span><span class="dm-b">' + sizeB + ' KB</span>' +
+    '<span class="dm-label">b64 chars</span><span class="dm-a">' + fA.b64.length.toLocaleString() + '</span><span class="dm-b">' + fB.b64.length.toLocaleString() + '</span>';
+  drawDiffCanvas(fA, fB);
+  document.getElementById('diff-results').classList.add('visible');
+  log('Diff', 'op', fA.name + ' vs ' + fB.name);
+});
+
+function drawDiffCanvas(fA, fB) {
+  var diffCanvas = document.getElementById('diff-canvas');
+  var dpr = window.devicePixelRatio || 1;
+  var rect = diffCanvas.getBoundingClientRect();
+  diffCanvas.width = rect.width * dpr; diffCanvas.height = 200 * dpr;
+  var dc = diffCanvas.getContext('2d');
+  dc.scale(dpr, dpr);
+  var w = rect.width, h = 200;
+  dc.fillStyle = '#0f0f12'; dc.fillRect(0, 0, w, h);
+  var topH = h * 0.55; var topMid = topH / 2;
+  var botTop = h * 0.62; var botH = h - botTop; var botMid = botTop + botH / 2;
+
+  dc.strokeStyle = '#27272a'; dc.lineWidth = 1;
+  dc.beginPath(); dc.moveTo(0, h * 0.58); dc.lineTo(w, h * 0.58); dc.stroke();
+  dc.fillStyle = '#3f3f46'; dc.font = '9px sans-serif';
+  dc.fillText('WAVEFORMS', 4, 10); dc.fillText('DIFFERENCE', 4, botTop + 10);
+  dc.strokeStyle = '#1e1e22';
+  dc.beginPath(); dc.moveTo(0, topMid); dc.lineTo(w, topMid); dc.stroke();
+  dc.beginPath(); dc.moveTo(0, botMid); dc.lineTo(w, botMid); dc.stroke();
+
+  var bytesA = b64ToBytes(fA.b64); var bytesB = b64ToBytes(fB.b64);
+  var viewA = new DataView(bytesA.buffer, bytesA.byteOffset, bytesA.byteLength);
+  var viewB = new DataView(bytesB.buffer, bytesB.byteOffset, bytesB.byteLength);
+  var blockAlignA = fA.numChannels * 2; var blockAlignB = fB.numChannels * 2;
+  var framesA = Math.floor((bytesA.length - WAV_HEADER) / blockAlignA);
+  var framesB = Math.floor((bytesB.length - WAV_HEADER) / blockAlignB);
+  var maxFrames = Math.max(framesA, framesB);
+  if (maxFrames <= 0) return;
+
+  var fppA = framesA / w; var fppB = framesB / w;
+
+  function getMinMax(view, pcmStart, blockAlign, nc, totalFrames, fpp, x, totalBytes) {
+    var fS = Math.floor(x * fpp); var fE = Math.min(Math.floor((x + 1) * fpp), totalFrames);
+    if (fS >= fE || fS >= totalFrames) return { min: 0, max: 0 };
+    var minS = 32767, maxS = -32768;
+    for (var f = fS; f < fE; f++) {
+      var bOff = pcmStart + f * blockAlign; var sum = 0;
+      for (var c = 0; c < nc; c++) { var off = bOff + c * 2; if (off + 1 < totalBytes) sum += view.getInt16(off, true); }
+      var avg = sum / nc;
+      if (avg < minS) minS = avg; if (avg > maxS) maxS = avg;
+    }
+    return { min: minS, max: maxS };
+  }
+
+  dc.strokeStyle = 'rgba(59, 130, 246, 0.7)'; dc.lineWidth = 1;
+  for (var x = 0; x < w; x++) {
+    var mm = getMinMax(viewA, WAV_HEADER, blockAlignA, fA.numChannels, framesA, fppA, x, bytesA.length);
+    if (mm.min === 0 && mm.max === 0) continue;
+    dc.beginPath();
+    dc.moveTo(x, topMid - (mm.max / 32768) * topMid);
+    dc.lineTo(x, topMid - (mm.min / 32768) * topMid);
+    dc.stroke();
+  }
+
+  dc.strokeStyle = 'rgba(245, 158, 11, 0.6)';
+  for (var x = 0; x < w; x++) {
+    var mm = getMinMax(viewB, WAV_HEADER, blockAlignB, fB.numChannels, framesB, fppB, x, bytesB.length);
+    if (mm.min === 0 && mm.max === 0) continue;
+    dc.beginPath();
+    dc.moveTo(x, topMid - (mm.max / 32768) * topMid);
+    dc.lineTo(x, topMid - (mm.min / 32768) * topMid);
+    dc.stroke();
+  }
+
+  dc.strokeStyle = 'rgba(239, 68, 68, 0.8)';
+  var maxFpp = maxFrames / w;
+  for (var x = 0; x < w; x++) {
+    var fS = Math.floor(x * maxFpp); var fE = Math.min(Math.floor((x + 1) * maxFpp), maxFrames);
+    if (fS >= fE) continue;
+    var minD = 32767, maxD = -32768;
+    for (var f = fS; f < fE; f++) {
+      var fIdxA = Math.floor(f * framesA / maxFrames);
+      var fIdxB = Math.floor(f * framesB / maxFrames);
+      var sA = 0, sB = 0;
+      if (fIdxA < framesA) {
+        var offA = WAV_HEADER + fIdxA * blockAlignA;
+        for (var c = 0; c < fA.numChannels; c++) { var pos = offA + c * 2; if (pos + 1 < bytesA.length) sA += viewA.getInt16(pos, true); }
+        sA /= fA.numChannels;
+      }
+      if (fIdxB < framesB) {
+        var offB = WAV_HEADER + fIdxB * blockAlignB;
+        for (var c = 0; c < fB.numChannels; c++) { var pos = offB + c * 2; if (pos + 1 < bytesB.length) sB += viewB.getInt16(pos, true); }
+        sB /= fB.numChannels;
+      }
+      var diff = sA - sB;
+      if (diff < minD) minD = diff; if (diff > maxD) maxD = diff;
+    }
+    dc.beginPath();
+    dc.moveTo(x, botMid - (maxD / 32768) * (botH / 2));
+    dc.lineTo(x, botMid - (minD / 32768) * (botH / 2));
+    dc.stroke();
+  }
+}
+
+window.addEventListener('resize', function() { updateZoomScroll(); drawWaveform(); updateSelectionOverlay(); updateCursorLine(); updateBottomPanel(); });
+
+// -- snap --
+function snapFrame(frame) {
+  if (!snapEnabled || clips.length <= 1) return frame;
+  var rect = canvas.getBoundingClientRect();
+  var virtualW = rect.width * zoomLevel;
+  var total = getTotalFrames();
+  if (total <= 0 || virtualW <= 0) return frame;
+  var snapThresholdFrames = Math.round((total / virtualW) * 10);
+  for (var i = 0; i < clips.length; i++) {
+    if (Math.abs(frame - clips[i].start) <= snapThresholdFrames) return clips[i].start;
+    if (Math.abs(frame - clips[i].end) <= snapThresholdFrames) return clips[i].end;
+  }
+  return frame;
+}
+
+// -- zoom --
+function setZoom(level) {
+  var rect = canvas.getBoundingClientRect();
+  var oldVirtualW = rect.width * zoomLevel;
+  var centerVirtual = scrollLeftPx + rect.width / 2;
+  var centerFrac = oldVirtualW > 0 ? centerVirtual / oldVirtualW : 0;
+  zoomLevel = Math.max(1, Math.min(level, 128));
+  var newVirtualW = rect.width * zoomLevel;
+  scrollLeftPx = Math.max(0, centerFrac * newVirtualW - rect.width / 2);
+  scrollLeftPx = Math.min(scrollLeftPx, Math.max(0, newVirtualW - rect.width));
+  updateZoomScroll();
+  drawWaveform(); updateSelectionOverlay(); updateCursorLine(); updateBottomPanel();
+}
+
+function updateZoomScroll() {
+  var rect = canvas.getBoundingClientRect();
+  var scrollWrap = document.getElementById('zoom-scroll-wrap');
+  var scrollInner = document.getElementById('zoom-scroll-inner');
+  if (!scrollWrap || !scrollInner) return;
+  var virtualW = rect.width * zoomLevel;
+  scrollInner.style.width = virtualW + 'px';
+  scrollWrap.scrollLeft = scrollLeftPx;
+  scrollWrap.style.display = zoomLevel > 1.01 ? 'block' : 'none';
+}
+
+document.getElementById('zoom-scroll-wrap').addEventListener('scroll', function() {
+  scrollLeftPx = this.scrollLeft;
+  requestRedraw();
+});
+
+canvas.addEventListener('wheel', function(e) {
+  if (e.ctrlKey || e.metaKey) {
+    e.preventDefault();
+    var delta = e.deltaY < 0 ? 1.25 : (1 / 1.25);
+    var px = getCanvasPx(e);
+    var virtualPx = px + scrollLeftPx;
+    var rect = canvas.getBoundingClientRect();
+    var oldVirtualW = rect.width * zoomLevel;
+    var frac = oldVirtualW > 0 ? virtualPx / oldVirtualW : 0;
+    zoomLevel = Math.max(1, Math.min(zoomLevel * delta, 128));
+    var newVirtualW = rect.width * zoomLevel;
+    scrollLeftPx = Math.max(0, frac * newVirtualW - px);
+    scrollLeftPx = Math.min(scrollLeftPx, Math.max(0, newVirtualW - rect.width));
+    updateZoomScroll();
+    requestRedraw();
+  } else if (zoomLevel > 1) {
+    e.preventDefault();
+    var rect = canvas.getBoundingClientRect();
+    var virtualW = rect.width * zoomLevel;
+    scrollLeftPx = Math.max(0, Math.min(scrollLeftPx + e.deltaY * 2, virtualW - rect.width));
+    updateZoomScroll();
+    requestRedraw();
+  }
+}, { passive: false });
+
+// -- view buttons --
+document.getElementById('btn-ripple').addEventListener('click', function() {
+  rippleEnabled = !rippleEnabled;
+  this.classList.toggle('active', rippleEnabled);
+  toast(rippleEnabled ? 'Ripple on (delete shifts timeline)' : 'Ripple off (delete silences)', 'info');
+});
+document.getElementById('btn-snap').addEventListener('click', function() {
+  snapEnabled = !snapEnabled;
+  this.classList.toggle('active', snapEnabled);
+  toast(snapEnabled ? 'Snap enabled' : 'Snap disabled', 'info');
+});
+document.getElementById('btn-zoom-in').addEventListener('click', function() { setZoom(zoomLevel * 1.5); });
+document.getElementById('btn-zoom-out').addEventListener('click', function() { setZoom(zoomLevel / 1.5); });
+document.getElementById('btn-zoom-fit').addEventListener('click', function() { setZoom(1); });
+
+// -- bottom panel --
+function updateBottomPanel() {
+  var posEl = document.getElementById('bp-position');
+  var selEl = document.getElementById('bp-selection');
+  var zoomEl = document.getElementById('bp-zoom');
+  var b64El = document.getElementById('bp-b64-preview');
+  if (!posEl) return;
+  if (!currentB64) { posEl.textContent = '0:00.000'; selEl.textContent = 'none'; zoomEl.textContent = '1.0x'; b64El.textContent = ''; return; }
+
+  var posSec = cursorFrame / Math.max(1, sampleRate);
+  var min = Math.floor(posSec / 60);
+  var sec = posSec % 60;
+  posEl.textContent = min + ':' + (sec < 10 ? '0' : '') + sec.toFixed(3);
+
+  var sel = getSelectionFrameRange();
+  if (sel) {
+    var selDur = (sel.end - sel.start) / sampleRate;
+    selEl.textContent = selDur.toFixed(3) + 's (' + (sel.end - sel.start) + 'f)';
+  } else {
+    selEl.textContent = 'none';
+  }
+
+  zoomEl.textContent = zoomLevel.toFixed(1) + 'x';
+
+  var total = getTotalFrames();
+  if (total > 0 && currentB64.length > 0) {
+    var idx = Math.max(0, Math.floor((cursorFrame / total) * (currentB64.length - 40)));
+    b64El.textContent = currentB64.substring(idx, idx + 40);
+  } else {
+    b64El.textContent = '';
+  }
+
+  drawMinimap();
+}
+
+function drawMinimap() {
+  var viewport = document.getElementById('minimap-viewport');
+  var wrap = document.getElementById('minimap-wrap');
+  var mCanvas = document.getElementById('minimap');
+  if (!wrap || !mCanvas || !viewport) return;
+  if (zoomLevel <= 1.01) { viewport.style.display = 'none'; }
+  var rect = wrap.getBoundingClientRect();
+  if (rect.width <= 0 || rect.height <= 0) return;
+  var dpr = window.devicePixelRatio || 1;
+  mCanvas.width = rect.width * dpr;
+  mCanvas.height = rect.height * dpr;
+  var mc = mCanvas.getContext('2d');
+  mc.scale(dpr, dpr);
+  var mw = rect.width, mh = rect.height;
+  mc.fillStyle = '#0a0a0c';
+  mc.fillRect(0, 0, mw, mh);
+  if (!currentB64) return;
+
+  var bytes = getCachedBytes();
+  if (bytes.length <= WAV_HEADER) return;
+  var view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  var blockAlign = numChannels * 2;
+  var totalFrames = Math.floor((bytes.length - WAV_HEADER) / blockAlign);
+  if (totalFrames <= 0) return;
+
+  var mid = mh / 2;
+  mc.strokeStyle = '#3b82f6'; mc.lineWidth = 1;
+  var fpp = totalFrames / mw;
+  var step = Math.max(1, Math.floor(fpp / 4));
+  for (var x = 0; x < mw; x++) {
+    var fS = Math.floor(x * fpp);
+    var fE = Math.min(Math.floor((x + 1) * fpp), totalFrames);
+    var minS = 32767, maxS = -32768;
+    for (var f = fS; f < fE; f += step) {
+      var bOff = WAV_HEADER + f * blockAlign;
+      var sum = 0;
+      for (var c = 0; c < numChannels; c++) {
+        var off = bOff + c * 2;
+        if (off + 1 < bytes.length) sum += view.getInt16(off, true);
+      }
+      var avg = sum / numChannels;
+      if (avg < minS) minS = avg; if (avg > maxS) maxS = avg;
+    }
+    if (fS >= fE) continue;
+    mc.beginPath();
+    mc.moveTo(x, mid - (maxS / 32768) * mid * 0.9);
+    mc.lineTo(x, mid - (minS / 32768) * mid * 0.9);
+    mc.stroke();
+  }
+
+  // cursor position indicator on minimap
+  if (totalFrames > 0) {
+    var curPx = (cursorFrame / totalFrames) * mw;
+    mc.strokeStyle = 'rgba(255,255,255,0.4)'; mc.lineWidth = 1;
+    mc.beginPath(); mc.moveTo(curPx, 0); mc.lineTo(curPx, mh); mc.stroke();
+  }
+
+  // viewport rect
+  var canvasRect = canvas.getBoundingClientRect();
+  var virtualW = canvasRect.width * zoomLevel;
+  if (virtualW > 0 && zoomLevel > 1.01) {
+    var vpLeft = (scrollLeftPx / virtualW) * mw;
+    var vpWidth = Math.max(2, (canvasRect.width / virtualW) * mw);
+    viewport.style.display = 'block';
+    viewport.style.left = vpLeft + 'px';
+    viewport.style.width = vpWidth + 'px';
+  } else {
+    viewport.style.display = 'none';
+  }
+}
+
+// minimap click to scroll
+document.getElementById('minimap-wrap').addEventListener('mousedown', function(e) {
+  var self = this;
+  function onMove(ev) {
+    var rect = self.getBoundingClientRect();
+    var frac = Math.max(0, Math.min(1, (ev.clientX - rect.left) / rect.width));
+    if (zoomLevel > 1) {
+      var canvasRect = canvas.getBoundingClientRect();
+      var virtualW = canvasRect.width * zoomLevel;
+      scrollLeftPx = Math.max(0, Math.min(frac * virtualW - canvasRect.width / 2, virtualW - canvasRect.width));
+      updateZoomScroll();
+      drawWaveform(); updateSelectionOverlay(); updateCursorLine();
+    }
+    cursorFrame = Math.floor(frac * getTotalFrames());
+    updateCursorLine(); updateBottomPanel();
+  }
+  onMove(e);
+  function onUp() { document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp); }
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+});
 
 log('Ready', 'info');
 </script>
