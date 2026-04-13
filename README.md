@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# b64audio
+# base64 but audacity
 
 audio editor but base64
 its just an html file
